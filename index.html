@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary Meta -->
+<title>NOLAP Technologies — Architecting Systems from Zero</title>
+<meta name="description" content="NOLAP Technologies is Africa's high-performance digital architecture firm. We build software, scale brands, and train elite tech talent across Africa.">
+<meta name="keywords" content="NOLAP Technologies, software development Ghana, web development Africa, digital marketing Ghana, tech training Africa, NOLAP Systems, NOLAP Academy, NOLAP Agency, African tech company">
+<meta name="author" content="NOLAP Technologies">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nolaptech.com/">
+
+<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nolaptech.com/">
+<meta property="og:title" content="NOLAP Technologies — Architecting Systems from Zero">
+<meta property="og:description" content="Africa's high-performance digital architecture firm. We build software, scale brands, and train elite tech talent.">
+<meta property="og:image" content="https://nolaptech.com/logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="NOLAP Technologies">
+<meta property="og:locale" content="en_GH">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://nolaptech.com/">
+<meta name="twitter:title" content="NOLAP Technologies — Architecting Systems from Zero">
+<meta name="twitter:description" content="Africa's high-performance digital architecture firm. We build software, scale brands, and train elite tech talent.">
+<meta name="twitter:image" content="https://nolaptech.com/logo.png">
+
+<!-- Theme & Mobile -->
+<meta name="theme-color" content="#0057B8">
+<meta name="msapplication-TileColor" content="#0057B8">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NOLAP Technologies",
+  "url": "https://nolaptech.com",
+  "logo": "https://nolaptech.com/logo.png",
+  "description": "Africa's high-performance digital architecture firm building software, scaling brands, and training elite tech talent.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GH",
+    "addressRegion": "Ghana"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+233591671310",
+    "contactType": "customer service",
+    "availableLanguage": "English"
+  },
+  "sameAs": [],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "NOLAP Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "NOLAP Systems — Software & Web Development"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "NOLAP Academy — Tech Training"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "NOLAP Agency — Digital Marketing & Branding"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:    #03060E;
+  --bg2:   #060B18;
+  --bg3:   #0A1020;
+  --blue:  #0057B8;
+  --blue2: #0046A0;
+  --blue3: #003580;
+  --w:     #FFFFFF;
+  --w80:   rgba(255,255,255,0.82);
+  --w55:   rgba(255,255,255,0.55);
+  --w25:   rgba(255,255,255,0.25);
+  --w10:   rgba(255,255,255,0.10);
+  --w05:   rgba(255,255,255,0.05);
+  --bl:    rgba(0,87,184,0.22);
+  --bl2:   rgba(0,87,184,0.50);
+  --blbg:  rgba(0,87,184,0.12);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Syne',sans-serif;
+  background:#03060E;
+  color:#FFFFFF;
+  overflow-x:hidden;
+}
+
+/* subtle grid */
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:68px 68px;
+  pointer-events:none;z-index:0;
+}
+
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:#03060E;}
+::-webkit-scrollbar-thumb{background:#0057B8;}
+
+/* ─ NAV ─────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  height:96px;padding:0 5vw;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(3,6,14,0.88);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(0,87,184,0.2);
+}
+.nlogo img{height:80px;width:auto;object-fit:contain;display:block;}
+.nmenu{display:flex;align-items:center;gap:36px;list-style:none;}
+.nmenu a{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s;
+}
+.nmenu a:hover{color:#fff;}
+.nmenu a.active{color:#fff;position:relative;}
+.nmenu a.active::after{
+  content:'';position:absolute;bottom:-4px;left:0;right:0;
+  height:1px;background:#0057B8;
+}
+.nbtn{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+  padding:12px 28px;background:#0057B8;color:#fff;
+  text-decoration:none;border:none;transition:background .25s;cursor:pointer;
+}
+.nbtn:hover{background:#0046A0;}
+
+/* hamburger */
+.hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:40px;height:40px;background:transparent;
+  border:1px solid rgba(255,255,255,0.15);cursor:pointer;
+  padding:10px;transition:border-color .2s;flex-shrink:0;
+}
+.hamburger:hover{border-color:#0057B8;}
+.hamburger span{
+  display:block;width:100%;height:1.5px;
+  background:#fff;transition:transform .3s,opacity .3s;
+  transform-origin:center;
+}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+/* mobile drawer */
+.mobile-drawer{
+  position:fixed;top:96px;left:0;right:0;z-index:998;
+  background:rgba(3,6,14,0.97);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(0,87,184,0.3);
+  padding:0;
+  transform:translateY(-110%);
+  transition:transform .35s cubic-bezier(.22,1,.36,1);
+  pointer-events:none;
+}
+.mobile-drawer.open{transform:translateY(0);pointer-events:all;}
+.mobile-drawer ul{list-style:none;padding:0;}
+.mobile-drawer ul li{border-bottom:1px solid rgba(0,87,184,0.12);}
+.mobile-drawer ul li a{
+  display:block;padding:18px 5vw;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,0.65);text-decoration:none;
+  transition:color .2s,background .2s;
+}
+.mobile-drawer ul li a:hover{color:#fff;background:rgba(0,87,184,0.1);}
+.mobile-drawer .drawer-cta{
+  padding:20px 5vw;
+}
+.mobile-drawer .drawer-cta a{
+  display:block;text-align:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  padding:15px;background:#0057B8;color:#fff;
+  text-decoration:none;transition:background .25s;
+}
+.mobile-drawer .drawer-cta a:hover{background:#0046A0;}
+
+/* ─ HERO ─────────────────────────────── */
+#hero{
+  position:relative;z-index:1;
+  min-height:100vh;padding:0 5vw;
+  display:flex;flex-direction:column;justify-content:center;
+  overflow:hidden;
+}
+.blob{position:absolute;border-radius:50%;filter:blur(110px);pointer-events:none;}
+.b1{
+  width:750px;height:750px;top:-200px;right:-180px;
+  background:radial-gradient(circle,rgba(0,87,184,0.28) 0%,transparent 65%);
+  animation:bf 9s ease-in-out infinite;
+}
+.b2{
+  width:500px;height:500px;bottom:-120px;left:-60px;
+  background:radial-gradient(circle,rgba(0,87,184,0.13) 0%,transparent 65%);
+  animation:bf 12s ease-in-out infinite reverse;
+}
+@keyframes bf{0%,100%{transform:translate(0,0);}50%{transform:translate(24px,-32px);}}
+
+.vline{
+  position:absolute;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,rgba(0,87,184,0.15) 30%,rgba(0,87,184,0.15) 70%,transparent);
+  pointer-events:none;
+}
+
+.hero-inner{position:relative;z-index:2;padding-top:130px;padding-bottom:90px;}
+
+.hlabel{
+  display:inline-flex;align-items:center;gap:14px;
+  margin-bottom:36px;
+  opacity:0;animation:rise .8s ease .1s forwards;
+}
+.hlabel-dash{width:36px;height:1px;background:#0057B8;}
+.hlabel span{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#0057B8;
+}
+
+h1.hh{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,7vw,96px);
+  line-height:.92;letter-spacing:1px;
+  opacity:0;animation:rise .9s cubic-bezier(.22,1,.36,1) .2s forwards;
+}
+h1.hh .bl{color:#0057B8;}
+
+.hrow{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;
+  margin-top:56px;
+  opacity:0;animation:rise .9s ease .38s forwards;
+}
+.hp{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.82);max-width:500px;}
+.hp strong{color:#fff;font-weight:700;}
+.hbtns{display:flex;gap:14px;flex-shrink:0;}
+
+.bfill{
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  padding:15px 36px;background:#0057B8;color:#fff;
+  text-decoration:none;border:1px solid #0057B8;transition:background .25s;white-space:nowrap;
+}
+.bfill:hover{background:#0046A0;}
+
+.bline{
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  padding:15px 36px;background:transparent;color:#fff;
+  text-decoration:none;border:1px solid rgba(255,255,255,0.22);
+  transition:border-color .25s,background .25s;white-space:nowrap;
+}
+.bline:hover{border-color:#0057B8;background:rgba(0,87,184,0.12);}
+
+/* Ticker */
+.ticker{
+  margin-top:80px;
+  border-top:1px solid rgba(0,87,184,0.2);
+  border-bottom:1px solid rgba(0,87,184,0.2);
+  padding:14px 0;overflow:hidden;
+  opacity:0;animation:rise .6s ease .7s forwards;
+}
+.tinner{display:flex;width:max-content;animation:tscroll 30s linear infinite;}
+.tinner span{
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;
+  letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,0.45);padding:0 36px;white-space:nowrap;
+}
+.tinner .dot{color:#0057B8;}
+@keyframes tscroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ─ STATEMENT BAR ─────────────────────────────── */
+#numbar{
+  position:relative;z-index:1;
+  background:#0057B8;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+.nbi{
+  padding:40px 44px;
+  border-right:1px solid rgba(255,255,255,0.12);
+}
+.nbi:first-child{padding-left:5vw;}
+.nbi:last-child{border-right:none;padding-right:5vw;}
+.nbv{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:3px;color:rgba(255,255,255,0.45);margin-bottom:8px;text-transform:uppercase;line-height:1;}
+.nbl{font-family:'Syne',sans-serif;font-size:15px;line-height:1.6;color:#fff;font-weight:500;}
+
+/* ─ SECTIONS ─────────────────────────────── */
+.sec{position:relative;z-index:1;padding:120px 5vw;}
+.sdark{background:#060B18;}
+.sbase{background:#03060E;}
+.bt{border-top:1px solid rgba(0,87,184,0.2);}
+.bb{border-bottom:1px solid rgba(0,87,184,0.2);}
+
+.eye{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.eye-r{width:26px;height:1px;background:#0057B8;flex-shrink:0;}
+.eye span{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:4px;text-transform:uppercase;color:#0057B8;}
+
+.stitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,4.5vw,58px);line-height:.95;letter-spacing:1px;color:#fff;}
+.stitle .bl{color:#0057B8;}
+.sbody{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,0.82);max-width:560px;}
+
+/* ─ ABOUT ─────────────────────────────── */
+#about .gl{display:grid;grid-template-columns:1fr 1.05fr;gap:96px;align-items:center;}
+
+.mbox{
+  border:1px solid rgba(0,87,184,0.5);
+  background:#0A1020;padding:52px 44px;position:relative;
+}
+.mbox::before,.mbox::after{content:'';position:absolute;width:24px;height:24px;}
+.mbox::before{top:-1px;left:-1px;border-top:2px solid #0057B8;border-left:2px solid #0057B8;}
+.mbox::after{bottom:-1px;right:-1px;border-bottom:2px solid #0057B8;border-right:2px solid #0057B8;}
+.mtag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#0057B8;margin-bottom:20px;}
+.mtext{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,3.5vw,48px);line-height:.95;letter-spacing:1px;color:#fff;}
+.mtext .bl{color:#0057B8;}
+.mrule{width:36px;height:2px;background:#0057B8;margin:24px 0;}
+.mcode{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:2;color:rgba(255,255,255,0.4);}
+.mcode .c{color:#0057B8;}
+
+.pills{display:flex;gap:0;margin-top:40px;border:1px solid rgba(0,87,184,0.22);}
+.pill{flex:1;padding:18px 20px;border-right:1px solid rgba(0,87,184,0.22);}
+.pill:last-child{border-right:none;}
+.pillnum{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;margin-bottom:7px;}
+.pillname{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:1px;color:#fff;line-height:1.2;}
+
+/* ─ SERVICES ─────────────────────────────── */
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:60px;}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(0,87,184,0.22);gap:1px;background:rgba(0,87,184,0.22);}
+.scard{
+  background:#03060E;padding:52px 40px 44px;
+  position:relative;overflow:hidden;transition:background .3s;
+}
+.scard::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:#0057B8;transform:scaleX(0);transform-origin:left;
+  transition:transform .5s cubic-bezier(.22,1,.36,1);
+}
+.scard:hover::before{transform:scaleX(1);}
+.scard:hover{background:#0A1020;}
+.cnum{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:3px;color:#0057B8;margin-bottom:36px;}
+.cname{font-family:'Bebas Neue',sans-serif;font-size:42px;line-height:.95;letter-spacing:1px;color:#fff;margin-bottom:6px;}
+.csub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;margin-bottom:22px;}
+.cdesc{font-size:14px;line-height:1.75;color:rgba(255,255,255,0.82);margin-bottom:28px;}
+.clist{display:flex;flex-direction:column;gap:9px;}
+.ci{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.75);transition:color .2s;}
+.scard:hover .ci{color:#fff;}
+.ci::before{content:'';display:inline-block;width:4px;height:4px;background:#0057B8;flex-shrink:0;}
+
+/* ─ PORTFOLIO ─────────────────────────────── */
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(0,87,184,0.22);border:1px solid rgba(0,87,184,0.22);}
+.pcard{background:#03060E;cursor:pointer;transition:background .3s;display:flex;flex-direction:column;}
+.pcard:hover{background:#0A1020;}
+.pcard-img{
+  position:relative;overflow:hidden;
+  height:260px;background:#0A1020;
+  display:flex;align-items:center;justify-content:center;
+}
+.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block;}
+.pcard:hover .pcard-img img{transform:scale(1.04);}
+.pcard-overlay{
+  position:absolute;inset:0;
+  background:rgba(0,87,184,0.75);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .3s;
+}
+.pcard:hover .pcard-overlay{opacity:1;}
+.pcard-overlay-text{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#fff;}
+.pcard-tag{
+  position:absolute;top:16px;left:16px;
+  font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;
+  background:#0057B8;color:#fff;padding:5px 10px;
+}
+.pcard-img-placeholder{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:rgba(0,87,184,0.3);
+}
+.pcard-body{padding:36px 36px 40px;flex:1;display:flex;flex-direction:column;}
+.pcard-num{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;color:#0057B8;margin-bottom:12px;}
+.pcard-name{font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1;letter-spacing:1px;color:#fff;margin-bottom:6px;}
+.pcard-sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,87,184,0.8);margin-bottom:16px;}
+.pcard-desc{font-size:14px;line-height:1.75;color:rgba(255,255,255,0.78);flex:1;}
+.pcard-link{
+  display:inline-block;margin-top:20px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;
+  color:#0057B8;text-decoration:none;
+  transition:color .2s;
+}
+.pcard-link:hover{color:#fff;}
+
+/* ─ MODAL ─────────────────────────────── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(3,6,14,0.92);
+  backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;
+  padding:24px;
+  opacity:0;pointer-events:none;
+  transition:opacity .3s;
+}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{
+  background:#060B18;
+  border:1px solid rgba(0,87,184,0.4);
+  max-width:760px;width:100%;
+  max-height:90vh;overflow-y:auto;
+  position:relative;
+  animation:modalIn .35s cubic-bezier(.22,1,.36,1);
+}
+@keyframes modalIn{from{transform:translateY(32px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.modal-close{
+  position:absolute;top:20px;right:20px;
+  background:transparent;border:1px solid rgba(255,255,255,0.2);
+  color:rgba(255,255,255,0.6);font-size:14px;
+  width:36px;height:36px;cursor:pointer;
+  transition:border-color .2s,color .2s;z-index:2;
+}
+.modal-close:hover{border-color:#0057B8;color:#fff;}
+.modal-img{width:100%;height:280px;object-fit:cover;display:block;background:#0A1020;}
+.modal-img-placeholder{width:100%;height:220px;background:#0A1020;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:3px;color:rgba(0,87,184,0.25);}
+.modal-inner{padding:40px 44px 48px;}
+.modal-div{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;margin-bottom:10px;}
+.modal-title{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;letter-spacing:1px;color:#fff;margin-bottom:6px;}
+.modal-sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-bottom:28px;}
+.modal-rule{width:36px;height:2px;background:#0057B8;margin-bottom:28px;}
+.modal-ps{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;}
+.modal-ps-box{padding:24px;background:#0A1020;border:1px solid rgba(0,87,184,0.2);}
+.modal-ps-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;}
+.modal-ps-label.prob{color:rgba(255,100,100,0.7);}
+.modal-ps-label.sol{color:#0057B8;}
+.modal-ps-text{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.78);}
+.modal-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+.modal-tag{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(0,87,184,0.4);color:rgba(255,255,255,0.55);}
+.modal-livelink{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  padding:13px 28px;background:#0057B8;color:#fff;text-decoration:none;
+  transition:background .25s;
+}
+.modal-livelink:hover{background:#0046A0;}
+
+/* ─ ACADEMY STRIP ─────────────────────────────── */
+.ac-strip{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.ac-stats{display:flex;gap:0;margin-top:36px;border:1px solid rgba(0,87,184,0.22);}
+.ac-stat{flex:1;padding:18px 20px;border-right:1px solid rgba(0,87,184,0.22);}
+.ac-stat:last-child{border-right:none;}
+.ac-stat-val{font-family:'Bebas Neue',sans-serif;font-size:42px;color:#0057B8;line-height:1;}
+.ac-stat-label{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px;}
+.ac-btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+.ac-winners{display:flex;flex-direction:column;gap:0;border:1px solid rgba(0,87,184,0.22);}
+.ac-winner-label{display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1px solid rgba(0,87,184,0.22);}
+.ac-winner-label span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#0057B8;}
+.ac-winner-card{padding:18px 20px;border-bottom:1px solid rgba(0,87,184,0.12);transition:background .2s;}
+.ac-winner-card:last-child{border-bottom:none;}
+.ac-winner-card:hover{background:rgba(0,87,184,0.06);}
+.ac-award{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:#0057B8;margin-bottom:5px;}
+.ac-winner-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;}
+.ac-winner-proj{font-size:12px;color:rgba(255,255,255,0.5);}
+
+/* ─ PROCESS ─────────────────────────────── */
+#process .gl{display:grid;grid-template-columns:1fr 1.8fr;gap:96px;align-items:start;margin-top:64px;}
+.pleft{position:sticky;top:100px;}
+.steps{display:flex;flex-direction:column;}
+.step{display:grid;grid-template-columns:60px 1fr;gap:24px;align-items:start;padding:32px 0;border-bottom:1px solid rgba(0,87,184,0.2);cursor:default;}
+.step:first-child{border-top:1px solid rgba(0,87,184,0.2);}
+.sn{font-family:'Bebas Neue',sans-serif;font-size:40px;color:#0057B8;line-height:1;opacity:.22;transition:opacity .35s;}
+.step:hover .sn{opacity:1;}
+.st{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;margin-bottom:9px;}
+.sd{font-size:13.5px;line-height:1.75;color:rgba(255,255,255,0.78);}
+
+.guarantee{
+  margin-top:36px;padding:28px;
+  background:#0A1020;border:1px solid rgba(0,87,184,0.22);
+  border-left:3px solid #0057B8;
+}
+.gtag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;margin-bottom:10px;}
+.gbody{font-size:14px;line-height:1.75;color:rgba(255,255,255,0.78);}
+
+/* ─ CONTACT ─────────────────────────────── */
+#cta{
+  position:relative;z-index:1;
+  background:#03060E;
+  padding:120px 5vw;
+  border-top:1px solid rgba(0,87,184,0.2);
+  overflow:hidden;
+}
+#cta::before{
+  content:'';position:absolute;
+  top:-200px;right:-200px;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(0,87,184,0.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+.contact-left{}
+.clabel{display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;}
+.clr{width:28px;height:1px;background:#0057B8;}
+.clabel span{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#0057B8;}
+.ch{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5.5vw,76px);line-height:.90;letter-spacing:2px;color:#fff;margin-bottom:20px;}
+.ch .bl{color:#0057B8;}
+.cp{font-size:14.5px;line-height:1.8;color:rgba(255,255,255,0.65);margin-bottom:36px;}
+
+/* form */
+.cform{display:flex;flex-direction:column;gap:0;border:1px solid rgba(0,87,184,0.3);background:#060B18;}
+.cform-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid rgba(0,87,184,0.18);}
+.cform-row.full{grid-template-columns:1fr;}
+.cfield{display:flex;flex-direction:column;position:relative;border-right:1px solid rgba(0,87,184,0.18);}
+.cfield:last-child{border-right:none;}
+.cfield label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:8.5px;letter-spacing:3px;text-transform:uppercase;
+  color:#0057B8;padding:14px 20px 0;
+}
+.cfield input,.cfield select,.cfield textarea{
+  font-family:'Syne',sans-serif;font-size:13.5px;
+  background:transparent;border:none;outline:none;
+  color:#fff;padding:8px 20px 16px;
+  transition:background .2s;
+  width:100%;
+}
+.cfield input::placeholder,.cfield textarea::placeholder{color:rgba(255,255,255,0.2);}
+.cfield select{color:rgba(255,255,255,0.55);cursor:pointer;}
+.cfield select option{background:#060B18;color:#fff;}
+.cfield textarea{resize:none;min-height:110px;line-height:1.6;}
+.cfield:focus-within{background:rgba(0,87,184,0.06);}
+.cfield:focus-within label{color:#fff;}
+
+.cform-submit{padding:0;}
+.cform-submit button{
+  width:100%;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  padding:20px;background:#0057B8;color:#fff;
+  border:none;cursor:pointer;
+  transition:background .25s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.cform-submit button:hover{background:#0046A0;}
+.cform-submit button.sent{background:#1a5c2a;pointer-events:none;}
+
+/* right side */
+.contact-right{display:flex;flex-direction:column;gap:0;}
+.cright-top{
+  padding:40px;
+  background:#0057B8;
+  position:relative;overflow:hidden;
+  margin-bottom:1px;
+}
+.cright-top::after{
+  content:'WA';
+  position:absolute;bottom:-30px;right:-10px;
+  font-family:'Bebas Neue',sans-serif;font-size:130px;letter-spacing:4px;
+  color:rgba(255,255,255,0.06);pointer-events:none;
+}
+.cright-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:12px;}
+.cright-title{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:.95;letter-spacing:1px;color:#fff;margin-bottom:16px;}
+.cright-desc{font-size:13.5px;line-height:1.75;color:rgba(255,255,255,0.75);margin-bottom:28px;}
+.wa-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  padding:16px 28px;background:#fff;color:#0057B8;
+  text-decoration:none;font-weight:700;
+  transition:background .25s,color .25s;
+  position:relative;z-index:1;
+}
+.wa-btn:hover{background:#03060E;color:#fff;}
+.wa-icon{font-size:16px;}
+
+.cright-info{
+  border:1px solid rgba(0,87,184,0.3);
+  background:#060B18;
+  display:flex;flex-direction:column;
+}
+.cinfo-item{
+  display:flex;align-items:center;gap:16px;
+  padding:20px 28px;
+  border-bottom:1px solid rgba(0,87,184,0.15);
+  transition:background .2s;
+}
+.cinfo-item:last-child{border-bottom:none;}
+.cinfo-item:hover{background:rgba(0,87,184,0.06);}
+.cinfo-icon{
+  width:36px;height:36px;
+  background:rgba(0,87,184,0.15);
+  border:1px solid rgba(0,87,184,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.cinfo-text{}
+.cinfo-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;margin-bottom:4px;}
+.cinfo-val{font-size:13px;color:rgba(255,255,255,0.75);}
+.cinfo-val a{color:rgba(255,255,255,0.75);text-decoration:none;transition:color .2s;}
+.cinfo-val a:hover{color:#fff;}
+
+/* success state */
+.form-success{
+  display:none;
+  flex-direction:column;align-items:center;justify-content:center;
+  padding:60px 40px;text-align:center;
+  border:1px solid rgba(0,87,184,0.3);background:#060B18;
+  min-height:300px;
+}
+.form-success.show{display:flex;}
+.success-icon{font-size:40px;margin-bottom:20px;}
+.success-title{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:1px;color:#fff;margin-bottom:10px;}
+.success-msg{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;}
+
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr;gap:48px;}
+}
+@media(max-width:600px){
+  .cform-row{grid-template-columns:1fr;}
+  .cfield{border-right:none;}
+}
+
+/* ─ FOOTER ─────────────────────────────── */
+footer{position:relative;z-index:1;background:#060B18;border-top:1px solid rgba(0,87,184,0.2);padding:80px 5vw 36px;}
+.fgrid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(0,87,184,0.2);}
+.fbrand img{height:90px;width:auto;object-fit:contain;display:block;margin-bottom:20px;}
+.fbname{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#fff;margin-bottom:8px;}
+.fbmotto{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:2.5px;color:#0057B8;margin-bottom:24px;}
+.fbdesc{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.45);max-width:280px;}
+.fch{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:13px;}
+.flinks a{font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s;}
+.flinks a:hover{color:#fff;}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
+.fbot span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,0.22);}
+
+/* ─ REVEAL ─────────────────────────────── */
+@keyframes rise{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);}
+.rv.in{opacity:1;transform:translateY(0);}
+
+/* ─ RESPONSIVE ─────────────────────────── */
+@media(max-width:1100px){
+  #about .gl{grid-template-columns:1fr;gap:56px;}
+  .sgrid{grid-template-columns:1fr 1fr;}
+  #process .gl{grid-template-columns:1fr;gap:48px;}
+  .pleft{position:static;}
+  .fgrid{grid-template-columns:1fr 1fr;gap:40px;}
+  #numbar{grid-template-columns:repeat(2,1fr);}
+  .ac-strip{grid-template-columns:1fr;gap:48px;}
+}
+@media(max-width:720px){
+  /* Nav */
+  .nmenu{display:none;}
+  .nbtn{display:none;}
+  .hamburger{display:flex;}
+
+  /* Section padding */
+  .sec{padding:72px 5vw;}
+
+  /* Hero */
+  .hrow{flex-direction:column;align-items:flex-start;}
+  .hbtns{flex-wrap:wrap;}
+
+  /* Numbar */
+  #numbar{grid-template-columns:1fr 1fr;}
+
+  /* Footer */
+  .fgrid{grid-template-columns:1fr;}
+
+  /* Services */
+  .sgrid{grid-template-columns:1fr;}
+
+  /* shead stack */
+  .shead{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:40px;}
+
+  /* Portfolio grid → single column */
+  .pgrid{grid-template-columns:1fr;}
+  .pcard-img{height:200px;}
+  .pcard-body{padding:24px 24px 28px;}
+
+  /* Modal */
+  .modal-ps{grid-template-columns:1fr;}
+  .modal-inner{padding:24px 20px 32px;}
+  .modal-title{font-size:34px;}
+
+  /* Contact */
+  .contact-grid{grid-template-columns:1fr;gap:40px;}
+  .cform-row{grid-template-columns:1fr;}
+  .cfield{border-right:none;}
+
+  /* Process */
+  .step{grid-template-columns:44px 1fr;gap:16px;}
+}
+@media(max-width:480px){
+  .pills{flex-direction:column;}
+  .pill{border-right:none;border-bottom:1px solid rgba(0,87,184,0.22);}
+  .pill:last-child{border-bottom:none;}
+  .nbi{padding:24px 0 24px 20px;}
+
+  /* Portfolio compact */
+  .pcard-img{height:180px;}
+  .pcard-body{padding:20px 18px 24px;}
+  .pcard-name{font-size:28px;}
+
+  /* Numbar single col */
+  #numbar{grid-template-columns:1fr;}
+
+  /* Section padding tighter */
+  .sec{padding:56px 5vw;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nlogo"><img src="logo.png" alt="NOLAP Technologies"></a>
+  <ul class="nmenu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#cta">Contact</a></li>
+  </ul>
+  <a href="#cta" class="nbtn">Work With Us</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <ul>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#services" onclick="closeMenu()">Services</a></li>
+    <li><a href="portfolio.html" onclick="closeMenu()">Portfolio</a></li>
+    <li><a href="#process" onclick="closeMenu()">Process</a></li>
+    <li><a href="#cta" onclick="closeMenu()">Contact</a></li>
+  </ul>
+  <div class="drawer-cta"><a href="#cta" onclick="closeMenu()">Work With Us</a></div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="vline" style="left:33.33%"></div>
+  <div class="vline" style="left:66.66%"></div>
+  <div class="hero-inner">
+    <div class="hlabel">
+      <div class="hlabel-dash"></div>
+      <span>Africa's Digital Architecture Firm</span>
+    </div>
+    <h1 class="hh">Architecting<br>Systems<br><span class="bl">From Zero.</span></h1>
+    <div class="hrow">
+      <p class="hp">We build <strong>software & digital systems</strong>, train <strong>elite tech talent</strong>, and scale <strong>brands across Africa</strong>. If it needs to be built right — NOLAP builds it.</p>
+      <div class="hbtns">
+        <a href="#services" class="bfill">Our Services</a>
+        <a href="#cta" class="bline">Work With Us</a>
+      </div>
+    </div>
+    <div class="ticker">
+      <div class="tinner">
+        <span>Software Development</span><span class="dot"> ✦ </span><span>Web Architecture</span><span class="dot"> ✦ </span><span>Brand Scaling</span><span class="dot"> ✦ </span><span>Digital Marketing</span><span class="dot"> ✦ </span><span>Tech Training</span><span class="dot"> ✦ </span><span>Systems Design</span><span class="dot"> ✦ </span><span>NOLAP Technologies</span><span class="dot"> ✦ </span>
+        <span>Software Development</span><span class="dot"> ✦ </span><span>Web Architecture</span><span class="dot"> ✦ </span><span>Brand Scaling</span><span class="dot"> ✦ </span><span>Digital Marketing</span><span class="dot"> ✦ </span><span>Tech Training</span><span class="dot"> ✦ </span><span>Systems Design</span><span class="dot"> ✦ </span><span>NOLAP Technologies</span><span class="dot"> ✦ </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBAR -->
+<div id="numbar">
+  <div class="nbi">
+    <div class="nbv">BUILD</div>
+    <div class="nbl">Software, websites & digital systems — architected from zero, delivered to last.</div>
+  </div>
+  <div class="nbi">
+    <div class="nbv">SCALE</div>
+    <div class="nbl">Brands grown through strategy, advertising, and content that commands real attention.</div>
+  </div>
+  <div class="nbi">
+    <div class="nbv">TRAIN</div>
+    <div class="nbl">Elite African tech talent — developed, refined, and ready to execute at the highest level.</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="sec sdark bt bb">
+  <div class="gl">
+    <div class="mbox rv">
+      <div class="mtag">// nolap_technologies.mandate</div>
+      <div class="mtext">Built to<br>Dominate<br><span class="bl">Africa's</span><br>Digital<br>Landscape.</div>
+      <div class="mrule"></div>
+      <div class="mcode">
+        <span class="c">const</span> status &nbsp;= <span class="c">"building"</span><br>
+        <span class="c">const</span> location = <span class="c">"Africa"</span><br>
+        <span class="c">const</span> ceiling &nbsp;= <span class="c">null</span>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="eye"><div class="eye-r"></div><span>Who We Are</span></div>
+      <h2 class="stitle">Three Divisions.<br><span class="bl">One Engine.</span></h2>
+      <p class="sbody" style="margin-top:24px">NOLAP Technologies is not a freelancer marketplace or a side project. We are a structured, high-performance operation built to deliver real results at scale across Africa's digital economy.</p>
+      <p class="sbody" style="margin-top:18px">Our vision is to be the engine of Africa's digital future. Every system we architect, every brand we scale, and every developer we train advances that mandate.</p>
+      <div class="pills">
+        <div class="pill"><div class="pillnum">Division 01</div><div class="pillname">NOLAP<br>SYSTEMS</div></div>
+        <div class="pill"><div class="pillnum">Division 02</div><div class="pillname">NOLAP<br>ACADEMY</div></div>
+        <div class="pill"><div class="pillnum">Division 03</div><div class="pillname">NOLAP<br>AGENCY</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="sec sbase bb">
+  <div class="shead">
+    <div>
+      <div class="eye rv"><div class="eye-r"></div><span>What We Deliver</span></div>
+      <h2 class="stitle rv">Our<br>Services.</h2>
+    </div>
+    <p class="sbody rv" style="max-width:360px;margin-top:0">Three divisions. Every capability you need to build, grow, and dominate your market in Africa.</p>
+  </div>
+  <div class="sgrid">
+    <div class="scard rv">
+      <div class="cnum">01 — SYSTEMS</div>
+      <div class="cname">NOLAP<br>SYSTEMS</div>
+      <div class="csub">Software · Web · Development</div>
+      <p class="cdesc">We architect and build digital systems from the ground up. Websites, software solutions, and full digital infrastructure — built to last, built to scale.</p>
+      <div class="clist">
+        <div class="ci">Website Design & Development</div>
+        <div class="ci">Custom Software Solutions</div>
+        <div class="ci">System Architecture & Planning</div>
+        <div class="ci">Frontend & Backend Development</div>
+      </div>
+    </div>
+    <div class="scard rv">
+      <div class="cnum">02 — ACADEMY</div>
+      <div class="cname">NOLAP<br>ACADEMY</div>
+      <div class="csub">Training · Pipeline · Talent</div>
+      <p class="cdesc">Africa's next generation of tech professionals, trained here. The Academy delivers skilled developers and digital professionals ready to execute at the highest level.</p>
+      <div class="clist">
+        <div class="ci">Tech Skills Training</div>
+        <div class="ci">Developer Pipeline Programme</div>
+        <div class="ci">Digital Skills Bootcamps</div>
+        <div class="ci">Corporate Tech Training</div>
+      </div>
+    </div>
+    <div class="scard rv">
+      <div class="cnum">03 — AGENCY</div>
+      <div class="cname">NOLAP<br>AGENCY</div>
+      <div class="csub">Marketing · Branding · Ads</div>
+      <p class="cdesc">We scale brands. From digital advertising and content strategy to full brand identity — NOLAP Agency drives the visibility and leads that grow your business.</p>
+      <div class="clist">
+        <div class="ci">Digital Advertising & Campaigns</div>
+        <div class="ci">Brand Identity & Strategy</div>
+        <div class="ci">Social Media Management</div>
+        <div class="ci">Content Production</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="sec sbase bb">
+  <div class="shead">
+    <div>
+      <div class="eye rv"><div class="eye-r"></div><span>Our Work</span></div>
+      <h2 class="stitle rv">Featured<br>Projects.</h2>
+    </div>
+    <p class="sbody rv" style="max-width:380px;margin-top:0">Real systems. Real clients. Real results. Click any project to see the full story.</p>
+  </div>
+  <div class="pgrid">
+    <div class="pcard rv" onclick="openModal('prep')">
+      <div class="pcard-img">
+        <img src="screenshots/nolapprep.png" alt="NOLAP Prep" onerror="this.style.display='none';this.parentNode.querySelector('.pcard-img-placeholder').style.display='flex'">
+        <div class="pcard-img-placeholder" style="display:none">NOLAP PREP</div>
+        <div class="pcard-overlay"><div class="pcard-overlay-text">View Case Study →</div></div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-num">Project 01</div>
+        <div class="pcard-name">NOLAP Prep</div>
+        <div class="pcard-sub">AI-Powered Exam Platform · Live Product</div>
+        <p class="pcard-desc">An intelligent exam preparation platform with AI question generation, PDF/DOCX/PPTX upload, progress tracking, and premium plans — actively used by students across Ghana.</p>
+        <a href="https://nolapprep.com" target="_blank" class="pcard-link" onclick="event.stopPropagation()">nolapprep.com ↗</a>
+      </div>
+    </div>
+    <div class="pcard rv" onclick="openModal('gaam')">
+      <div class="pcard-img">
+        <img src="screenshots/gaam.png" alt="GAAM Website" onerror="this.style.display='none';this.parentNode.querySelector('.pcard-img-placeholder').style.display='flex'">
+        <div class="pcard-img-placeholder" style="display:none">GAAM OFFICIAL</div>
+        <div class="pcard-overlay"><div class="pcard-overlay-text">View Case Study →</div></div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-num">Project 02</div>
+        <div class="pcard-name">GAAM Official</div>
+        <div class="pcard-sub">Institutional Website · National Body</div>
+        <p class="pcard-desc">The official digital platform for the Ghana Association of Assembly Members — serving elected officials and communities across all 16 regions of Ghana.</p>
+        <a href="https://gaamofficial.org" target="_blank" class="pcard-link" onclick="event.stopPropagation()">gaamofficial.org ↗</a>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:52px;" class="rv">
+    <a href="portfolio.html" class="bfill">View All Projects</a>
+  </div>
+</section>
+
+<!-- ACADEMY STRIP -->
+<section class="sec sdark bt bb" id="academy-strip">
+  <div class="ac-strip rv">
+    <div class="ac-strip-left">
+      <div class="eye"><div class="eye-r"></div><span>NOLAP Academy</span></div>
+      <h2 class="stitle">Python Bootcamp<br><span class="bl">2025.</span></h2>
+      <p class="sbody" style="margin-top:20px;max-width:460px;">We trained 21 university students in Python from zero. 13 of them went further — building and defending real software projects in the Code The Vacation Challenge. This is what NOLAP Academy produces.</p>
+      <div class="ac-stats">
+        <div class="ac-stat"><div class="ac-stat-val">21</div><div class="ac-stat-label">Students Trained</div></div>
+        <div class="ac-stat"><div class="ac-stat-val">13</div><div class="ac-stat-label">Projects Built & Defended</div></div>
+        <div class="ac-stat"><div class="ac-stat-val">5</div><div class="ac-stat-label">Award Categories</div></div>
+      </div>
+      <div class="ac-btns">
+        <a href="https://github.com/Mortoti/code-the-vacation-challenge-2025" target="_blank" class="bfill">View Student Projects ↗</a>
+        <a href="portfolio.html#academy" class="bline">Full Case Study</a>
+      </div>
+    </div>
+    <div class="ac-strip-right">
+      <div class="ac-winners">
+        <div class="ac-winner-label"><div class="eye-r"></div><span>Hall of Fame</span></div>
+        <div class="ac-winner-card">
+          <div class="ac-award">🥇 Best Overall</div>
+          <div class="ac-winner-name">Isaac Atoeyine Anafo</div>
+          <div class="ac-winner-proj">GradeMaster — CWA/GPA Calculator</div>
+        </div>
+        <div class="ac-winner-card">
+          <div class="ac-award">💻 Most Technical</div>
+          <div class="ac-winner-name">Richmond Frimpong</div>
+          <div class="ac-winner-proj">Mini Library Management System</div>
+        </div>
+        <div class="ac-winner-card">
+          <div class="ac-award">🎨 Most Creative</div>
+          <div class="ac-winner-name">Nkrumah Joel</div>
+          <div class="ac-winner-proj">AOM GAMES — 5-Game Arcade</div>
+        </div>
+        <div class="ac-winner-card">
+          <div class="ac-award">🎤 Best Presentation</div>
+          <div class="ac-winner-name">Azumah Lordaria</div>
+          <div class="ac-winner-proj">LORDISH Banking System</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section id="process" class="sec sdark bb">
+  <div class="eye rv"><div class="eye-r"></div><span>How We Work</span></div>
+  <h2 class="stitle rv">Simple. Direct.<br><span class="bl">Delivered.</span></h2>
+  <div class="gl">
+    <div class="pleft">
+      <p class="sbody rv" style="margin-top:0">No delays. No confusion. You come with a need — we scope it, build it, and deliver it. That is the NOLAP standard.</p>
+      <div class="guarantee rv">
+        <div class="gtag">Our Guarantee</div>
+        <p class="gbody">We do not deliver raw, unfinished work. Everything is reviewed internally before it reaches you. If we commit to a deadline, we hit it.</p>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="sn">01</div><div><div class="st">You Reach Out</div><p class="sd">Tell us what you need — a website, a marketing campaign, a software system, or training for your team. We listen, ask the right questions, and fully understand the brief before anything else.</p></div></div>
+      <div class="step rv"><div class="sn">02</div><div><div class="st">We Scope & Propose</div><p class="sd">We put together a clear proposal — what we will build, how long it will take, and what it will cost. No hidden fees. No vague timelines. You know exactly what you are getting before you commit.</p></div></div>
+      <div class="step rv"><div class="sn">03</div><div><div class="st">We Build</div><p class="sd">Our team executes. The PM keeps you updated at every stage — you are never in the dark. All work is reviewed and polished internally before it reaches your hands.</p></div></div>
+      <div class="step rv"><div class="sn">04</div><div><div class="st">You Launch</div><p class="sd">We hand over a finished, polished product ready to go live. Your brand looks sharp, your system works, your campaign runs. NOLAP stands behind everything we build.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="cta">
+  <div class="contact-grid">
+
+    <!-- LEFT: Form -->
+    <div class="contact-left rv">
+      <div class="clabel"><div class="clr"></div><span>Start a Project</span></div>
+      <h2 class="ch">Let's<br><span class="bl">Build</span><br>Together.</h2>
+      <p class="cp">Fill in the brief below and we'll get back to you within 24 hours. Or jump straight to WhatsApp if you prefer a faster conversation.</p>
+
+      <!-- Success state -->
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✦</div>
+        <div class="success-title">Brief Received.</div>
+        <p class="success-msg">We have your message and will respond within 24 hours.<br>NOLAP builds fast — so will our reply.</p>
+      </div>
+
+      <!-- Formspree Form -->
+      <div id="formWrap">
+        <div class="cform">
+          <div class="cform-row">
+            <div class="cfield">
+              <label>Full Name</label>
+              <input type="text" name="name" placeholder="Your name" required>
+            </div>
+            <div class="cfield">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="cform-row">
+            <div class="cfield">
+              <label>WhatsApp / Phone</label>
+              <input type="text" name="phone" placeholder="+233 ...">
+            </div>
+            <div class="cfield">
+              <label>Service Needed</label>
+              <select name="service">
+                <option value="" disabled selected>Select a division</option>
+                <option value="NOLAP Systems — Software / Web">NOLAP Systems — Software / Web</option>
+                <option value="NOLAP Academy — Training">NOLAP Academy — Training</option>
+                <option value="NOLAP Agency — Marketing / Branding">NOLAP Agency — Marketing / Branding</option>
+                <option value="Multiple / Not Sure">Multiple / Not Sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="cform-row full">
+            <div class="cfield">
+              <label>Project Brief</label>
+              <textarea name="message" placeholder="Tell us what you need built, scaled, or trained..." required></textarea>
+            </div>
+          </div>
+          <div class="cform-submit">
+            <button type="button" id="submitBtn" onclick="submitForm()">
+              <span id="btnText">Send Brief →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: WhatsApp + Info -->
+    <div class="contact-right rv">
+      <div class="cright-top">
+        <div class="cright-label">Prefer to talk directly?</div>
+        <div class="cright-title">Open a<br>WhatsApp<br>Conversation.</div>
+        <p class="cright-desc">Skip the form. Hit the button and we'll have a real conversation about what you need — fast.</p>
+        <a href="https://wa.me/233591671310?text=Hi%20NOLAP%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" class="wa-btn">
+          <span class="wa-icon">💬</span> Chat on WhatsApp
+        </a>
+      </div>
+
+      <div class="cright-info">
+        <div class="cinfo-item">
+          <div class="cinfo-icon">✉</div>
+          <div class="cinfo-text">
+            <div class="cinfo-label">Email Us</div>
+            <div class="cinfo-val"><a href="mailto:info@nolaptech.com">info@nolaptech.com</a></div>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">📍</div>
+          <div class="cinfo-text">
+            <div class="cinfo-label">Location</div>
+            <div class="cinfo-val">Ghana, West Africa</div>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">⏱</div>
+          <div class="cinfo-text">
+            <div class="cinfo-label">Response Time</div>
+            <div class="cinfo-val">Within 24 hours</div>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">✦</div>
+          <div class="cinfo-text">
+            <div class="cinfo-label">Working Hours</div>
+            <div class="cinfo-val">Mon – Sat, 8am – 8pm GMT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fgrid">
+    <div class="fbrand">
+      <img src="logo.png" alt="NOLAP Technologies">
+      <div class="fbname">NOLAP TECHNOLOGIES</div>
+      <div class="fbmotto">Architecting Systems from Zero.</div>
+      <p class="fbdesc">A high-performance African technology company building software, scaling brands, and training the next generation of tech talent.</p>
+    </div>
+    <div>
+      <div class="fch">Divisions</div>
+      <ul class="flinks">
+        <li><a href="#services">NOLAP Systems</a></li>
+        <li><a href="#services">NOLAP Academy</a></li>
+        <li><a href="#services">NOLAP Agency</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fch">Company</div>
+      <ul class="flinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">How We Work</a></li>
+        <li><a href="#cta">Work With Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fch">Contact</div>
+      <ul class="flinks">
+        <li><a href="mailto:info@nolaptech.com">info@nolaptech.com</a></li>
+        <li><a href="https://wa.me/233591671310?text=Hi%20NOLAP%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">WhatsApp</a></li>
+        <li><a href="https://www.linkedin.com/company/nolap-technologies/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 NOLAP Technologies. All rights reserved.</span>
+    <span>Architecting Systems from Zero.</span>
+  </div>
+</footer>
+
+<script>
+// Scroll spy
+const sections = document.querySelectorAll('section[id], div[id="cta"]');
+const navLinks = document.querySelectorAll('.nmenu a[href^="#"]');
+const spyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.nmenu a[href="#${entry.target.id}"]`);
+      if(active) active.classList.add('active');
+    }
+  });
+},{threshold:0.3,rootMargin:'-80px 0px -60% 0px'});
+sections.forEach(s => spyObserver.observe(s));
+
+// Hamburger menu
+function toggleMenu(){
+  const h=document.getElementById('hamburger');
+  const d=document.getElementById('mobileDrawer');
+  h.classList.toggle('open');
+  d.classList.toggle('open');
+  document.body.style.overflow=d.classList.contains('open')?'hidden':'';
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// Scroll reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){
+      setTimeout(() => e.target.classList.add('in'), (i%5)*100);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// Modal data
+const projects = {
+  prep: {
+    title: 'NOLAP Prep',
+    division: 'NOLAP Systems',
+    sub: 'AI-Powered Exam Platform · Live Software Product',
+    img: 'screenshots/nolapprep.png',
+    imgLabel: 'NOLAP PREP',
+    problem: 'Students across Ghana were spending money on expensive, outdated exam prep materials with no intelligent feedback or personalised study tools.',
+    solution: 'NOLAP Systems engineered a full AI-powered platform that generates exam questions from uploaded documents, tracks student progress, and offers affordable premium plans. Students are actively using it today.',
+    tags: ['AI Integration','Exam Generation','PDF / DOCX / PPTX Upload','User Authentication','Progress Tracking','Premium Subscription'],
+    link: 'https://nolapprep.com',
+    linkLabel: 'Visit nolapprep.com ↗'
+  },
+  gaam: {
+    title: 'GAAM Official',
+    division: 'NOLAP Systems',
+    sub: 'Institutional Website · Ghana Association of Assembly Members',
+    img: 'screenshots/gaam.png',
+    imgLabel: 'GAAM OFFICIAL',
+    problem: 'The Ghana Association of Assembly Members — a national body representing elected officials across all 16 regions — had no official digital presence, limiting visibility and communication.',
+    solution: 'NOLAP Systems designed and built a full institutional website with news & events, executive profiles, FAQs, and contact systems. The site now serves as the credible public face of a national governance body.',
+    tags: ['Institutional Website','Multi-page Architecture','News & Events System','Executive Profiles','National Governance','16 Regions'],
+    link: 'https://gaamofficial.org',
+    linkLabel: 'Visit gaamofficial.org ↗'
+  }
+};
+
+function openModal(id) {
+  const p = projects[id];
+  const overlay = document.getElementById('modal');
+  document.getElementById('modal-content').innerHTML = `
+    <div class="modal-img-placeholder" id="modal-img-wrap">
+      <img src="${p.img}" alt="${p.title}" style="width:100%;height:280px;object-fit:cover;display:block;" onerror="document.getElementById('modal-img-wrap').innerHTML='<div class=\'modal-img-placeholder\'>${p.imgLabel}</div>'">
+    </div>
+    <div class="modal-inner">
+      <div class="modal-div">${p.division}</div>
+      <div class="modal-title">${p.title}</div>
+      <div class="modal-sub">${p.sub}</div>
+      <div class="modal-rule"></div>
+      <div class="modal-ps">
+        <div class="modal-ps-box">
+          <div class="modal-ps-label prob">// The Problem</div>
+          <p class="modal-ps-text">${p.problem}</p>
+        </div>
+        <div class="modal-ps-box">
+          <div class="modal-ps-label sol">// The Solution</div>
+          <p class="modal-ps-text">${p.solution}</p>
+        </div>
+      </div>
+      <div class="modal-tags">${p.tags.map(t=>`<span class="modal-tag">${t}</span>`).join('')}</div>
+      <a href="${p.link}" target="_blank" class="modal-livelink">View Live Project ↗</a>
+    </div>
+  `;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if(e.target === document.getElementById('modal')) closeModalBtn();
+}
+
+function closeModalBtn() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModalBtn(); });
+
+// Contact Form — Formspree submission
+async function submitForm() {
+  const btn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+  const name    = document.querySelector('[name="name"]').value.trim();
+  const email   = document.querySelector('[name="email"]').value.trim();
+  const service = document.querySelector('[name="service"]').value;
+  const message = document.querySelector('[name="message"]').value.trim();
+
+  if(!name || !email || !message) {
+    [document.querySelector('[name="name"]'),document.querySelector('[name="email"]'),document.querySelector('[name="message"]')].forEach(f=>{
+      if(!f.value.trim()){f.style.color='rgba(255,100,100,0.9)';setTimeout(()=>f.style.color='',2000);}
+    });
+    return;
+  }
+
+  btnText.textContent = 'Sending...';
+  btn.style.opacity = '0.7';
+  btn.style.pointerEvents = 'none';
+
+  try {
+    // Replace YOUR_FORM_ID with your Formspree form ID after signing up at formspree.io
+    const res = await fetch('https://formspree.io/f/xqedvlgv', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name, email, service, message })
+    });
+
+    if(res.ok) {
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    } else {
+      btnText.textContent = 'Failed — Try Again';
+      btn.style.opacity = '1'; btn.style.pointerEvents = 'all';
+      btn.style.background = 'rgba(180,40,40,0.9)';
+    }
+  } catch(err) {
+    btnText.textContent = 'Error — Try Again';
+    btn.style.opacity = '1'; btn.style.pointerEvents = 'all';
+  }
+}
+</script>
+</body>
+</html>
