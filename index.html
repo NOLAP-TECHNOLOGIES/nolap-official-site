@@ -310,6 +310,7 @@ footer{position:relative;z-index:1;background:#060B18;border-top:1px solid rgba(
 .cel-item{padding:20px 28px;border-bottom:1px solid rgba(0,87,184,0.15);display:flex;align-items:center;gap:20px;}
 .cel-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;min-width:110px;flex-shrink:0;}
 .cel-desc{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;}
+#celebration-studio{padding-top:116px;}
 
 /* ─ REVEAL ─ */
 @keyframes rise{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
@@ -357,7 +358,7 @@ footer{position:relative;z-index:1;background:#060B18;border-top:1px solid rgba(
 </div>
 
 <!-- CELEBRATION STUDIO — first section, immediately visible -->
-<section id="celebration-studio" class="sec sbase bb rv">
+<section id="celebration-studio" class="sec sbase bb">
   <div class="cel-grid">
     <div>
       <div class="eye"><div class="eye-r"></div><span>Now Live — Celebration Studio</span></div>
@@ -621,7 +622,7 @@ footer{position:relative;z-index:1;background:#060B18;border-top:1px solid rgba(
         <a href="https://wa.me/233591671310?text=Hi%20NOLAP%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" class="wa-btn"><span class="wa-icon">💬</span> Chat on WhatsApp</a>
       </div>
       <div class="cright-info">
-        <div class="cinfo-item"><div class="cinfo-icon">✉</div><div><div class="cinfo-label">Email Us</div><div class="cinfo-val"><a href="mailto:info@nolaptech.com">info@nolaptech.com</a></div></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">✉</div><div><div class="cinfo-label">Email Us</div><div class="cinfo-val"><a href="/cdn-cgi/l/email-protection#88e1e6eee7c8e6e7e4e9f8fcedebe0a6ebe7e5"><span class="__cf_email__" data-cfemail="cfa6a1a9a08fa1a0a3aebfbbaaaca7e1aca0a2">[email&#160;protected]</span></a></div></div></div>
         <div class="cinfo-item"><div class="cinfo-icon">📍</div><div><div class="cinfo-label">Location</div><div class="cinfo-val">Ghana, West Africa</div></div></div>
         <div class="cinfo-item"><div class="cinfo-icon">⏱</div><div><div class="cinfo-label">Response Time</div><div class="cinfo-val">Within 24 hours</div></div></div>
         <div class="cinfo-item"><div class="cinfo-icon">✦</div><div><div class="cinfo-label">Working Hours</div><div class="cinfo-val">Mon – Sat, 8am – 8pm GMT</div></div></div>
@@ -641,7 +642,7 @@ footer{position:relative;z-index:1;background:#060B18;border-top:1px solid rgba(
     </div>
     <div><div class="fch">Divisions</div><ul class="flinks"><li><a href="#services">NOLAP Systems</a></li><li><a href="#services">NOLAP Academy</a></li><li><a href="#services">NOLAP Agency</a></li></ul></div>
     <div><div class="fch">Company</div><ul class="flinks"><li><a href="#about">About</a></li><li><a href="#process">How We Work</a></li><li><a href="#cta">Work With Us</a></li></ul></div>
-    <div><div class="fch">Contact</div><ul class="flinks"><li><a href="mailto:info@nolaptech.com">info@nolaptech.com</a></li><li><a href="https://wa.me/233591671310?text=Hi%20NOLAP%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">WhatsApp</a></li><li><a href="https://www.linkedin.com/company/nolap-technologies/" target="_blank">LinkedIn</a></li></ul></div>
+    <div><div class="fch">Contact</div><ul class="flinks"><li><a href="/cdn-cgi/l/email-protection#ea83848c85aa8485868b9a9e8f8982c4898587"><span class="__cf_email__" data-cfemail="1e777078715e7071727f6e6a7b7d76307d7173">[email&#160;protected]</span></a></li><li><a href="https://wa.me/233591671310?text=Hi%20NOLAP%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">WhatsApp</a></li><li><a href="https://www.linkedin.com/company/nolap-technologies/" target="_blank">LinkedIn</a></li></ul></div>
   </div>
   <div class="fbot">
     <span>© 2026 NOLAP Technologies. All rights reserved.</span>
@@ -650,16 +651,6 @@ footer{position:relative;z-index:1;background:#060B18;border-top:1px solid rgba(
 </footer>
 
 <script>
-// Dynamically set top padding to match the fixed header height
-function fixHero() {
-  const h = document.getElementById('site-header');
-  const cel = document.getElementById('celebration-studio');
-  const navH = h ? h.offsetHeight : 96;
-  if (cel) cel.style.paddingTop = (navH + 120) + 'px';
-}
-fixHero();
-window.addEventListener('resize', fixHero);
-
 // Scroll spy
 const spySections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nmenu a[href^="#"]');
