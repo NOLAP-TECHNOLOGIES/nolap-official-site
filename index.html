@@ -654,10 +654,8 @@ footer{position:relative;z-index:1;background:#060B18;border-top:1px solid rgba(
 function fixHero() {
   const h = document.getElementById('site-header');
   const cel = document.getElementById('celebration-studio');
-  const hero = document.getElementById('hero');
-  const offset = h ? h.offsetHeight + 'px' : '96px';
-  if (cel) cel.style.paddingTop = offset;
-  if (hero) hero.style.paddingTop = '';
+  const navH = h ? h.offsetHeight : 96;
+  if (cel) cel.style.paddingTop = (navH + 120) + 'px';
 }
 fixHero();
 window.addEventListener('resize', fixHero);
