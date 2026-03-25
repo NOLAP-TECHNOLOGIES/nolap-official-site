@@ -3,122 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 — Page Not Found | NOLAP Technologies</title>
+<title>404 &mdash; Page Not Found | NOLAP Technologies</title>
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
+:root{
+  --blue:#0057B8;--blue-d:#0046A0;--blue-l:#EBF3FF;--blue-m:#C4DAFF;
+  --ink:#0D1B33;--body:#3D4F6B;--muted:#7A8EA8;
+  --border:#E4EAF2;--bg:#F7F9FC;
+  --ssm:0 2px 8px rgba(0,0,0,.06);
+  --slg:0 16px 56px rgba(0,0,0,.12);
+  --r:12px;--rl:20px;--rxl:32px;
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html,body{height:100%;}
-body{
-  font-family:'Syne',sans-serif;
-  background:#03060E;color:#fff;
-  overflow:hidden;
-  display:flex;flex-direction:column;
-}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--ink);display:flex;flex-direction:column;overflow:hidden;}
+img{display:block;}
+a{text-decoration:none;color:inherit;}
 
-body::after{
-  content:'';position:fixed;inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
-  background-size:68px 68px;
-  pointer-events:none;z-index:0;
-}
+/* NAV */
+nav{height:72px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(255,255,255,.95);border-bottom:1px solid var(--border);flex-shrink:0;}
+.nlogo img{height:52px;width:auto;}
+.nav-cta{font-size:14px;font-weight:700;padding:10px 24px;background:var(--blue);color:#fff;border-radius:100px;transition:background .2s;}
+.nav-cta:hover{background:var(--blue-d);}
 
-nav{
-  position:relative;z-index:1;
-  height:96px;padding:0 5vw;
-  display:flex;align-items:center;justify-content:space-between;
-  border-bottom:1px solid rgba(0,87,184,0.2);
-  flex-shrink:0;
-}
-.nlogo img{height:80px;width:auto;object-fit:contain;display:block;}
-.nbtn{
-  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
-  padding:12px 28px;background:#0057B8;color:#fff;
-  text-decoration:none;transition:background .25s;
-}
-.nbtn:hover{background:#0046A0;}
+/* MAIN */
+.main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 5vw;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#EBF3FF 0%,#F7F9FC 50%,#DDEEFF 100%);}
+.blob1{position:absolute;width:500px;height:500px;top:-150px;right:-100px;border-radius:50%;background:radial-gradient(circle,rgba(0,87,184,.08),transparent 70%);pointer-events:none;}
+.blob2{position:absolute;width:400px;height:400px;bottom:-100px;left:-80px;border-radius:50%;background:radial-gradient(circle,rgba(0,87,184,.06),transparent 70%);pointer-events:none;}
 
-.main{
-  position:relative;z-index:1;
-  flex:1;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  padding:40px 5vw;text-align:center;
-  overflow:hidden;
-}
+/* Ghost 404 */
+.bg404{position:absolute;font-family:'Bebas Neue',sans-serif;font-size:clamp(180px,32vw,340px);letter-spacing:8px;color:rgba(0,87,184,.05);pointer-events:none;user-select:none;white-space:nowrap;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1;}
 
-.bg-text{
-  position:absolute;
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(160px,30vw,320px);
-  letter-spacing:8px;color:rgba(0,87,184,0.06);
-  pointer-events:none;user-select:none;
-  white-space:nowrap;
-  top:50%;transform:translateY(-50%);
-}
+/* Content */
+.content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);padding:6px 14px 6px 8px;border-radius:100px;font-size:13px;font-weight:600;color:var(--blue);margin-bottom:24px;box-shadow:var(--ssm);animation:rise .6s ease both;}
+.pill-dot{width:8px;height:8px;border-radius:50%;background:#DC2626;}
+.num{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,16vw,160px);line-height:.85;letter-spacing:2px;color:var(--ink);margin-bottom:8px;animation:rise .7s cubic-bezier(.22,1,.36,1) .1s both;}
+.num .bl{color:var(--blue);}
+.sub{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,3.5vw,36px);letter-spacing:1px;color:var(--body);margin-bottom:20px;animation:rise .7s ease .2s both;}
+.msg{font-size:15px;line-height:1.8;color:var(--muted);max-width:400px;margin-bottom:40px;animation:rise .7s ease .3s both;}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:rise .7s ease .4s both;}
+.btn-blue{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:13px 28px;background:var(--blue);color:#fff;border-radius:100px;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(0,87,184,.25);}
+.btn-blue:hover{background:var(--blue-d);transform:translateY(-1px);}
+.btn-out{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:13px 28px;background:#fff;color:var(--ink);border-radius:100px;border:1.5px solid var(--border);transition:border-color .2s,color .2s,transform .15s;}
+.btn-out:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px);}
 
-.label{
-  display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;
-  animation:rise .7s ease forwards;
-}
-.label-dash{width:28px;height:1px;background:#0057B8;}
-.label span{
-  font-family:'JetBrains Mono',monospace;font-size:10px;
-  letter-spacing:4px;text-transform:uppercase;color:#0057B8;
-}
-
-h1{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(72px,14vw,160px);
-  line-height:.85;letter-spacing:2px;color:#fff;
-  margin-bottom:8px;
-  animation:rise .8s cubic-bezier(.22,1,.36,1) .1s both;
-}
-
-.sub{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(22px,4vw,42px);
-  letter-spacing:2px;color:#0057B8;
-  margin-bottom:24px;
-  animation:rise .8s ease .2s both;
-}
-
-p{
-  font-size:15px;line-height:1.8;
-  color:rgba(255,255,255,0.55);
-  max-width:420px;margin-bottom:40px;
-  animation:rise .8s ease .3s both;
-}
-
-.btns{
-  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
-  animation:rise .8s ease .4s both;
-}
-
-.bfill{
-  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
-  padding:15px 36px;background:#0057B8;color:#fff;
-  text-decoration:none;border:1px solid #0057B8;transition:background .25s;
-}
-.bfill:hover{background:#0046A0;}
-
-.bline{
-  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
-  padding:15px 36px;background:transparent;color:#fff;
-  text-decoration:none;border:1px solid rgba(255,255,255,0.22);
-  transition:border-color .25s,background .25s;
-}
-.bline:hover{border-color:#0057B8;background:rgba(0,87,184,0.12);}
-
-@keyframes rise{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes rise{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
 @media(max-width:480px){
   .btns{flex-direction:column;align-items:center;}
-  .nbtn{display:none;}
+  .btns a{width:100%;justify-content:center;}
+  .nav-cta{display:none;}
 }
 </style>
 </head>
@@ -126,24 +64,22 @@ p{
 
 <nav>
   <a href="index.html" class="nlogo"><img src="logo.png" alt="NOLAP Technologies"></a>
-  <a href="index.html" class="nbtn">Back to Home</a>
+  <a href="index.html" class="nav-cta">Back to Home</a>
 </nav>
 
 <div class="main">
-  <div class="bg-text">404</div>
-
-  <div class="label">
-    <div class="label-dash"></div>
-    <span>Error — Page Not Found</span>
-  </div>
-
-  <h1>404</h1>
-  <div class="sub">This page doesn't exist.</div>
-  <p>The page you're looking for was moved, deleted, or never existed. Let's get you back on track.</p>
-
-  <div class="btns">
-    <a href="index.html" class="bfill">Back to Home</a>
-    <a href="portfolio.html" class="bline">View Our Work</a>
+  <div class="blob1"></div>
+  <div class="blob2"></div>
+  <div class="bg404">404</div>
+  <div class="content">
+    <div class="pill"><div class="pill-dot"></div>Error &mdash; Page Not Found</div>
+    <div class="num"><span class="bl">4</span>0<span class="bl">4</span></div>
+    <div class="sub">This page doesn't exist.</div>
+    <p class="msg">The page you're looking for was moved, deleted, or never existed. Let's get you back on track.</p>
+    <div class="btns">
+      <a href="index.html" class="btn-blue">Back to Home &#8594;</a>
+      <a href="portfolio.html" class="btn-out">View Our Work</a>
+    </div>
   </div>
 </div>
 

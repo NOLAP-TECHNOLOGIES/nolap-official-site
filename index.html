@@ -5,836 +5,1194 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NOLAP Technologies — Architecting Systems from Zero</title>
 <meta name="description" content="NOLAP Technologies is Africa's high-performance digital architecture firm. We build software, scale brands, and train elite tech talent across Africa.">
-<meta name="keywords" content="NOLAP Technologies, software development Ghana, web development Africa, digital marketing Ghana, tech training Africa, NOLAP Systems, NOLAP Academy, NOLAP Agency, African tech company">
-<meta name="author" content="NOLAP Technologies">
 <meta name="robots" content="index, follow">
+<!-- cf-email-protection: off -->
 <link rel="canonical" href="https://nolaptech.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nolaptech.com/">
 <meta property="og:title" content="NOLAP Technologies — Architecting Systems from Zero">
-<meta property="og:description" content="Africa's high-performance digital architecture firm. We build software, scale brands, and train elite tech talent.">
+<meta property="og:description" content="Africa's high-performance digital architecture firm.">
 <meta property="og:image" content="https://nolaptech.com/logo.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="NOLAP Technologies">
-<meta property="og:locale" content="en_GH">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://nolaptech.com/">
-<meta name="twitter:title" content="NOLAP Technologies — Architecting Systems from Zero">
-<meta name="twitter:description" content="Africa's high-performance digital architecture firm. We build software, scale brands, and train elite tech talent.">
-<meta name="twitter:image" content="https://nolaptech.com/logo.png">
 <meta name="theme-color" content="#0057B8">
-<meta name="msapplication-TileColor" content="#0057B8">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"NOLAP Technologies","url":"https://nolaptech.com","logo":"https://nolaptech.com/logo.png","description":"Africa's high-performance digital architecture firm building software, scaling brands, and training elite tech talent.","address":{"@type":"PostalAddress","addressCountry":"GH","addressRegion":"Ghana"},"contactPoint":{"@type":"ContactPoint","telephone":"+233591671310","contactType":"customer service","availableLanguage":"English"},"sameAs":[],"hasOfferCatalog":{"@type":"OfferCatalog","name":"NOLAP Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"NOLAP Systems — Software & Web Development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"NOLAP Academy — Tech Training"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"NOLAP Agency — Digital Marketing & Branding"}}]}}
-</script>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#03060E;--bg2:#060B18;--bg3:#0A1020;--blue:#0057B8;--blue2:#0046A0;--blue3:#003580;--w:#FFFFFF;--w80:rgba(255,255,255,0.82);--w55:rgba(255,255,255,0.55);--w25:rgba(255,255,255,0.25);--w10:rgba(255,255,255,0.10);--w05:rgba(255,255,255,0.05);--bl:rgba(0,87,184,0.22);--bl2:rgba(0,87,184,0.50);--blbg:rgba(0,87,184,0.12);}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Syne',sans-serif;background:#03060E;color:#FFFFFF;overflow-x:hidden;}
-body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:68px 68px;pointer-events:none;z-index:0;}
-::-webkit-scrollbar{width:3px;}
-::-webkit-scrollbar-track{background:#03060E;}
-::-webkit-scrollbar-thumb{background:#0057B8;}
-
-/* ─ FIXED HEADER WRAPPER ─ */
-#site-header{position:fixed;top:0;left:0;right:0;z-index:999;}
-
-/* ─ NAV ─ */
-nav{height:96px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(3,6,14,0.88);backdrop-filter:blur(24px);border-bottom:1px solid rgba(0,87,184,0.2);}
-.nlogo img{height:80px;width:auto;object-fit:contain;display:block;}
-.nmenu{display:flex;align-items:center;gap:36px;list-style:none;}
-.nmenu a{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s;}
-.nmenu a:hover{color:#fff;}
-.nmenu a.active{color:#fff;position:relative;}
-.nmenu a.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:#0057B8;}
-.nbtn{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;padding:12px 28px;background:#0057B8;color:#fff;text-decoration:none;border:none;transition:background .25s;cursor:pointer;}
-.nbtn:hover{background:#0046A0;}
-.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:transparent;border:1px solid rgba(255,255,255,0.15);cursor:pointer;padding:10px;transition:border-color .2s;flex-shrink:0;}
-.hamburger:hover{border-color:#0057B8;}
-.hamburger span{display:block;width:100%;height:1.5px;background:#fff;transition:transform .3s,opacity .3s;transform-origin:center;}
-.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-
-/* ─ MOBILE DRAWER ─ */
-.mobile-drawer{position:fixed;left:0;right:0;z-index:998;background:rgba(3,6,14,0.97);backdrop-filter:blur(24px);border-bottom:1px solid rgba(0,87,184,0.3);transform:translateY(-110%);transition:transform .35s cubic-bezier(.22,1,.36,1);pointer-events:none;}
-.mobile-drawer.open{transform:translateY(0);pointer-events:all;}
-.mobile-drawer ul{list-style:none;padding:0;}
-.mobile-drawer ul li{border-bottom:1px solid rgba(0,87,184,0.12);}
-.mobile-drawer ul li a{display:block;padding:18px 5vw;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;transition:color .2s,background .2s;}
-.mobile-drawer ul li a:hover{color:#fff;background:rgba(0,87,184,0.1);}
-.mobile-drawer .drawer-cta{padding:20px 5vw;}
-.mobile-drawer .drawer-cta a{display:block;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:15px;background:#0057B8;color:#fff;text-decoration:none;transition:background .25s;}
-.mobile-drawer .drawer-cta a:hover{background:#0046A0;}
-
-/* ─ BOOTCAMP ANNOUNCEMENT BAR ─ */
-#bootcamp-bar{
-  position:relative; z-index:1;
-  margin-top:96px;
-  background:#060B18;
-  border-bottom:1px solid rgba(0,87,184,0.25);
-  border-left:none;
+:root {
+  --blue: #0057B8;
+  --blue-d: #0046A0;
+  --blue-l: #EBF3FF;
+  --blue-m: #C4DAFF;
+  --ink: #0D1B33;
+  --body: #3D4F6B;
+  --muted: #7A8EA8;
+  --border: #E4EAF2;
+  --bg: #F7F9FC;
+  --green: #16A34A;
+  --ssm: 0 2px 8px rgba(0,0,0,0.06);
+  --smd: 0 8px 32px rgba(0,0,0,0.09);
+  --slg: 0 16px 56px rgba(0,0,0,0.12);
+  --r: 12px;
+  --rl: 20px;
+  --rxl: 32px;
 }
-.bc-bar-inner{
-  padding:0 5vw;
-  display:flex; align-items:center; justify-content:space-between;
-  gap:20px; flex-wrap:wrap;
-  min-height:72px;
-  border-left:3px solid #0057B8;
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--ink); overflow-x: hidden; line-height: 1.6; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 2px; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 999; height: 72px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: rgba(255,255,255,0.93); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.nlogo img { height: 52px; width: auto; }
+.nmenu { list-style: none; display: flex; align-items: center; gap: 4px; }
+.nmenu a { font-size: 14px; font-weight: 500; color: var(--body); padding: 8px 14px; border-radius: 8px; transition: background 0.2s, color 0.2s; }
+.nmenu a:hover, .nmenu a.active { background: var(--blue-l); color: var(--blue); }
+.nav-cta { font-size: 14px; font-weight: 700; padding: 10px 24px; background: var(--blue); color: #fff; border-radius: 100px; transition: background 0.2s; white-space: nowrap; }
+.nav-cta:hover { background: var(--blue-d); }
+.hbg { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.hbg span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+.hbg.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hbg.open span:nth-child(2) { opacity: 0; }
+.hbg.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.drawer { position: fixed; inset: 0; z-index: 998; background: #fff; padding: 96px 5vw 40px; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); pointer-events: none; }
+.drawer.open { transform: translateX(0); pointer-events: all; }
+.drawer ul { list-style: none; display: flex; flex-direction: column; }
+.drawer ul a { display: block; font-size: 18px; font-weight: 600; color: var(--ink); padding: 16px 0; border-bottom: 1px solid var(--border); }
+.drawer-cta { margin-top: 28px; display: block; text-align: center; font-size: 16px; font-weight: 700; padding: 15px; background: var(--blue); color: #fff; border-radius: 100px; }
+
+/* BUTTONS */
+.btn-blue { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 13px 28px; background: var(--blue); color: #fff; border-radius: 100px; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s; box-shadow: 0 4px 20px rgba(0,87,184,0.25); }
+.btn-blue:hover { background: var(--blue-d); transform: translateY(-1px); }
+.btn-outline { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 13px 28px; background: #fff; color: var(--ink); border-radius: 100px; border: 1.5px solid var(--border); transition: border-color 0.2s, color 0.2s, transform 0.15s; }
+.btn-outline:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); }
+.btn-white { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 13px 26px; background: #fff; color: var(--ink); border-radius: 100px; border: none; transition: box-shadow 0.2s, transform 0.15s; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+.btn-white:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.2); transform: translateY(-1px); }
+.btn-outwhite { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 13px 26px; background: transparent; color: #fff; border-radius: 100px; border: 1.5px solid rgba(255,255,255,0.4); transition: background 0.2s, border-color 0.2s; }
+.btn-outwhite:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+
+/* SECTION BASICS */
+.sec { padding: 96px 5vw; }
+.tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-l); padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; }
+.tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+.sec-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px,4.5vw,58px); line-height: 0.95; letter-spacing: 0.5px; color: var(--ink); margin-bottom: 14px; }
+.sec-title .bl { color: var(--blue); }
+.sec-body { font-size: 15px; line-height: 1.8; color: var(--body); max-width: 520px; }
+
+/* HERO */
+#hero { background: linear-gradient(135deg, #EBF3FF 0%, #F0F7FF 50%, #DDEEFF 100%); padding: 80px 5vw 0; overflow: hidden; position: relative; }
+.hero-blob { position: absolute; border-radius: 50%; pointer-events: none; }
+.hero-blob1 { width: 500px; height: 500px; top: -200px; right: -150px; background: radial-gradient(circle, rgba(0,87,184,0.08), transparent 70%); }
+.hero-blob2 { width: 300px; height: 300px; bottom: -100px; left: 10%; background: radial-gradient(circle, rgba(0,87,184,0.06), transparent 70%); }
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.hero-pill { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); padding: 6px 14px 6px 8px; border-radius: 100px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 28px; box-shadow: var(--ssm); }
+.hero-pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.hero-h { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px,7vw,84px); line-height: 0.93; letter-spacing: 1px; color: var(--ink); margin-bottom: 24px; }
+.hero-h .bl { color: var(--blue); }
+.hero-p { font-size: 16px; line-height: 1.75; color: var(--body); margin-bottom: 36px; max-width: 440px; }
+.hero-p strong { color: var(--ink); }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+.hstat { padding-right: 32px; border-right: 1px solid var(--border); }
+.hstat:last-child { border-right: none; padding-right: 0; }
+.hstat-n { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--blue); line-height: 1; }
+.hstat-l { font-size: 12px; color: var(--muted); font-weight: 500; margin-top: 2px; }
+.hero-right { position: relative; display: flex; justify-content: center; align-items: center; padding: 20px 20px 20px 20px; }
+.hero-img-wrap { position: relative; width: 100%; max-width: 460px; margin: 0 auto; border-radius: var(--rxl); overflow: hidden; box-shadow: 0 32px 80px rgba(0,87,184,0.15); }
+.hero-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; display: block; background: var(--blue-m); }
+.hero-fc { position: absolute; bottom: 4px; left: 4px; background: #fff; border-radius: var(--r); padding: 16px 20px; box-shadow: var(--slg); min-width: 160px; animation: float 4s ease-in-out infinite; z-index: 2; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.hero-fc-l { font-size: 11px; color: var(--muted); font-weight: 500; margin-bottom: 4px; }
+.hero-fc-v { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--ink); line-height: 1; }
+.hero-fc-s { font-size: 12px; color: var(--green); font-weight: 600; margin-top: 2px; }
+.hero-badge { position: absolute; top: 4px; right: 4px; background: var(--blue); color: #fff; border-radius: 100px; padding: 10px 18px; font-size: 12px; font-weight: 700; box-shadow: var(--smd); white-space: nowrap; animation: float 5s ease-in-out infinite reverse; z-index: 2; }
+
+/* TICKER */
+.ticker { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; overflow: hidden; }
+.ticker-inner { display: flex; width: max-content; animation: scroll 32s linear infinite; }
+.ticker-inner span { font-size: 13px; font-weight: 600; color: var(--muted); padding: 0 28px; white-space: nowrap; }
+.ticker-inner .tdot { color: var(--blue); }
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* C++ BOOTCAMP */
+#bootcamp { background: var(--blue-l); position: relative; overflow: hidden; }
+.bc-bg { position: absolute; right: -20px; top: 50%; transform: translateY(-50%); font-family: 'Bebas Neue', sans-serif; font-size: clamp(160px,22vw,300px); color: rgba(0,87,184,0.07); pointer-events: none; line-height: 1; user-select: none; z-index: 0; }
+.bc-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.bc-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--blue); background: #fff; padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; box-shadow: var(--ssm); }
+.bc-h { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px,6vw,80px); line-height: 0.9; letter-spacing: 0.5px; color: var(--ink); margin-bottom: 14px; }
+.bc-h .bl { color: var(--blue); }
+.bc-p { font-size: 15px; line-height: 1.8; color: var(--body); max-width: 480px; margin-bottom: 24px; }
+.live-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(22,163,74,0.12); border: 1.5px solid rgba(22,163,74,0.3); border-radius: 100px; padding: 8px 16px; margin-bottom: 20px; }
+.live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.live-txt { font-size: 13px; font-weight: 700; color: var(--green); }
+.bc-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+.bc-card { display: flex; align-items: flex-start; gap: 10px; background: #fff; border-radius: var(--r); padding: 14px 16px; box-shadow: var(--ssm); }
+.bc-icon { font-size: 18px; flex-shrink: 0; }
+.bc-lbl { font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+.bc-val { font-size: 13px; color: var(--body); line-height: 1.4; }
+.bc-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.flyer-col { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.flyer-card { border-radius: var(--rxl); overflow: hidden; box-shadow: 0 24px 64px rgba(0,87,184,0.18); width: 100%; max-width: 400px; transform: rotate(-1.5deg); transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); }
+.flyer-card:hover { transform: rotate(0deg) scale(1.02); }
+.flyer-card img { width: 100%; display: block; }
+.flyer-ph { width: 100%; aspect-ratio: 3/4; background: linear-gradient(160deg, #1a3a6b, #0057B8); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px; }
+.flyer-ph-t { font-family: 'Bebas Neue', sans-serif; font-size: 52px; letter-spacing: 2px; color: #fff; text-align: center; line-height: 0.9; }
+.flyer-ph-s { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 2px; text-transform: uppercase; text-align: center; }
+.flyer-cap { font-size: 12px; color: var(--muted); text-align: center; font-weight: 500; }
+
+/* SERVICES */
+#services { background: #fff; }
+.svc-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-bottom: 52px; }
+.svc-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--border); border: 1.5px solid var(--border); border-radius: var(--rl); overflow: hidden; }
+.svc-card { background: #fff; padding: 44px 48px; position: relative; overflow: hidden; display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: start; transition: background 0.25s; }
+.svc-card:hover { background: var(--bg); }
+.svc-left { display: flex; flex-direction: column; }
+.svc-num { font-family: 'Bebas Neue', sans-serif; font-size: 88px; line-height: 0.85; letter-spacing: -2px; margin-bottom: 16px; }
+.svc-card-1 .svc-num { color: rgba(0,87,184,0.1); }
+.svc-card-2 .svc-num { color: rgba(14,165,233,0.1); }
+.svc-card-3 .svc-num { color: rgba(99,102,241,0.1); }
+.svc-label { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; }
+.svc-card-1 .svc-label { background: rgba(0,87,184,0.08); color: var(--blue); }
+.svc-card-2 .svc-label { background: rgba(14,165,233,0.08); color: #0EA5E9; }
+.svc-card-3 .svc-label { background: rgba(99,102,241,0.08); color: #6366F1; }
+.svc-right { padding-top: 6px; }
+.svc-name { font-family: 'Bebas Neue', sans-serif; font-size: 42px; line-height: 0.92; letter-spacing: 0.5px; color: var(--ink); margin-bottom: 8px; }
+.svc-sub { font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 18px; }
+.svc-desc { font-size: 14.5px; line-height: 1.75; color: var(--body); margin-bottom: 28px; max-width: 560px; }
+.svc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.svc-list li { font-size: 13px; color: var(--body); display: flex; align-items: center; gap: 8px; font-weight: 500; }
+.svc-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.svc-card-1 .svc-dot { background: var(--blue); }
+.svc-card-2 .svc-dot { background: #0EA5E9; }
+.svc-card-3 .svc-dot { background: #6366F1; }
+.svc-stripe { position: absolute; top: 0; left: 0; bottom: 0; width: 4px; }
+.svc-card-1 .svc-stripe { background: var(--blue); }
+.svc-card-2 .svc-stripe { background: #0EA5E9; }
+.svc-card-3 .svc-stripe { background: #6366F1; }
+
+/* ABOUT */
+#about { background: var(--bg); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.about-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; position: relative; padding-bottom: 40px; }
+.img-tall { grid-row: span 2; border-radius: var(--rxl); overflow: hidden; aspect-ratio: 3/4; background: var(--blue-m); }
+.img-tall img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img-sq { border-radius: var(--rl); overflow: hidden; aspect-ratio: 1; background: var(--blue-l); }
+.img-sq img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img-accent { border-radius: var(--rl); aspect-ratio: 1; background: linear-gradient(135deg, var(--blue), #003F8A); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: rgba(255,255,255,0.8); letter-spacing: 1px; text-align: center; line-height: 1.5; padding: 16px; }
+.about-stat { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); background: #fff; border-radius: 100px; padding: 12px 22px; box-shadow: var(--slg); display: flex; align-items: center; gap: 16px; white-space: nowrap; }
+.as-item { text-align: center; }
+.as-n { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--blue); line-height: 1; }
+.as-l { font-size: 11px; color: var(--muted); font-weight: 500; }
+.as-div { width: 1px; height: 32px; background: var(--border); }
+.about-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin: 24px 0 32px; }
+.alist-item { display: flex; align-items: flex-start; gap: 14px; }
+.alist-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--blue-l); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; margin-top: 2px; }
+.alist-title { display: block; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.alist-desc { font-size: 13.5px; color: var(--body); line-height: 1.5; }
+
+/* PORTFOLIO */
+#portfolio { background: #fff; }
+.port-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; margin-bottom: 48px; }
+.port-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.pcard { background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--rl); overflow: hidden; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; display: flex; flex-direction: column; }
+.pcard:hover { transform: translateY(-5px); box-shadow: var(--slg); border-color: var(--blue); }
+.pcard-img-wrap { aspect-ratio: 16/9; overflow: hidden; position: relative; background: var(--blue-l); width: 100%; }
+.pcard-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.5s; display: block; }
+.pcard:hover .pcard-img-wrap img { transform: scale(1.04); }
+.pcard-ov { position: absolute; inset: 0; background: rgba(0,87,184,0.85); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+.pcard:hover .pcard-ov { opacity: 1; }
+.pcard-ov span { font-size: 14px; font-weight: 700; color: #fff; }
+.pcard-ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; color: var(--blue-m); display: none; }
+.pcard-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+.pcard-badge { display: inline-block; font-size: 11px; font-weight: 700; color: var(--blue); background: var(--blue-l); padding: 4px 10px; border-radius: 100px; margin-bottom: 12px; }
+.pcard-name { font-family: 'Bebas Neue', sans-serif; font-size: 30px; line-height: 1; letter-spacing: 0.5px; color: var(--ink); margin-bottom: 4px; }
+.pcard-sub { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.pcard-desc { font-size: 13.5px; line-height: 1.75; color: var(--body); flex: 1; }
+.pcard-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: 13px; font-weight: 700; color: var(--blue); transition: gap 0.2s; }
+.pcard-link:hover { gap: 10px; }
+
+/* PYTHON BOOTCAMP */
+#python-bootcamp { background: var(--bg); }
+.py-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.py-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--green); background: rgba(22,163,74,0.1); padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; }
+.py-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+.py-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1.5px solid var(--border); border-radius: var(--rl); overflow: hidden; margin: 24px 0 28px; }
+.py-stat { padding: 20px 16px; background: #fff; text-align: center; }
+.py-stat-n { font-family: 'Bebas Neue', sans-serif; font-size: 42px; color: var(--blue); line-height: 1; }
+.py-stat-l { font-size: 11px; color: var(--muted); font-weight: 600; margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
+.hof { border: 1.5px solid var(--border); border-radius: var(--rl); overflow: hidden; background: #fff; }
+.hof-head { padding: 14px 20px; border-bottom: 1px solid var(--border); }
+.hof-head span { font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+.hof-row { padding: 15px 20px; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+.hof-row:last-child { border-bottom: none; }
+.hof-row:hover { background: var(--bg); }
+.hof-award { font-size: 12px; font-weight: 600; color: var(--blue); margin-bottom: 3px; }
+.hof-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.hof-proj { font-size: 12px; color: var(--muted); }
+.py-flyer-col { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.py-flyer-card { border-radius: var(--rxl); overflow: hidden; box-shadow: var(--slg); width: 100%; max-width: 380px; transform: rotate(2deg); transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); }
+.py-flyer-card:hover { transform: rotate(0deg) scale(1.02); }
+.py-flyer-card img { width: 100%; display: block; }
+.py-flyer-ph { width: 100%; aspect-ratio: 3/4; background: linear-gradient(160deg, #1a4a2e, #166534); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px; }
+.py-flyer-cap { font-size: 12px; color: var(--muted); text-align: center; font-weight: 500; }
+
+/* GALLERY */
+#gallery { background: #fff; }
+.gal-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; margin-bottom: 40px; }
+.gal-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.gal-item { border-radius: var(--rl); overflow: hidden; position: relative; cursor: pointer; background: var(--blue-l); }
+.gal-item:nth-child(1) { grid-column: span 2; aspect-ratio: 16/9; }
+.gal-item:nth-child(2) { aspect-ratio: 3/4; }
+.gal-item:nth-child(3) { aspect-ratio: 1; }
+.gal-item:nth-child(4) { aspect-ratio: 1; }
+.gal-item:nth-child(5) { grid-column: span 2; aspect-ratio: 16/9; }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+.gal-item:hover img { transform: scale(1.06); }
+.gal-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,87,184,0.6) 0%, transparent 50%); opacity: 0; transition: opacity 0.3s; }
+.gal-item:hover .gal-ov { opacity: 1; }
+.gal-ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2px; color: rgba(0,87,184,0.35); }
+.lightbox { position: fixed; inset: 0; z-index: 9999; background: rgba(13,27,51,0.95); display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.lightbox.open { opacity: 1; pointer-events: all; }
+.lb-img { max-width: 90vw; max-height: 90vh; border-radius: var(--rl); object-fit: contain; }
+.lb-btn { position: absolute; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2); color: #fff; font-size: 18px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; }
+.lb-btn:hover { background: rgba(255,255,255,0.2); }
+.lb-close { top: 20px; right: 20px; }
+.lb-prev { top: 50%; left: 20px; transform: translateY(-50%); font-size: 22px; }
+.lb-next { top: 50%; right: 20px; transform: translateY(-50%); font-size: 22px; }
+
+/* PROCESS */
+#process { background: var(--bg); }
+.proc-head { text-align: center; margin-bottom: 64px; }
+.proc-head .tag { margin: 0 auto 16px; }
+.proc-head .sec-body { margin: 0 auto; }
+.steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; position: relative; }
+.steps-grid::before { content: ''; position: absolute; top: 40px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, var(--blue), var(--blue-m)); z-index: 0; }
+.step { background: #fff; border: 1.5px solid var(--border); border-radius: var(--rl); padding: 32px 24px 28px; text-align: center; position: relative; z-index: 1; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
+.step:hover { transform: translateY(-5px); box-shadow: var(--smd); border-color: var(--blue); }
+.step-n { width: 56px; height: 56px; border-radius: 50%; background: var(--blue); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 4px 16px rgba(0,87,184,0.3); }
+.step-t { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+.step-d { font-size: 13px; line-height: 1.7; color: var(--body); }
+.guarantee { margin-top: 40px; background: #fff; border: 1.5px solid var(--border); border-left: 4px solid var(--blue); border-radius: var(--rl); padding: 28px 36px; display: flex; align-items: center; gap: 20px; }
+.g-icon { flex-shrink: 0; }
+.g-title { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 3px; }
+.g-text { font-size: 14px; color: var(--body); line-height: 1.6; }
+
+/* CONTACT */
+#cta { background: #fff; }
+.cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.cform { background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--rl); overflow: hidden; }
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
+.cf-row.full { grid-template-columns: 1fr; }
+.cf { display: flex; flex-direction: column; border-right: 1px solid var(--border); }
+.cf:last-child { border-right: none; }
+.cf label { font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: 2px; text-transform: uppercase; padding: 14px 20px 0; }
+.cf input, .cf select, .cf textarea { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; background: transparent; border: none; outline: none; color: var(--ink); padding: 6px 20px 14px; width: 100%; }
+.cf input::placeholder, .cf textarea::placeholder { color: var(--muted); }
+.cf select { color: var(--body); cursor: pointer; }
+.cf select option { background: #fff; color: var(--ink); }
+.cf textarea { resize: none; min-height: 110px; line-height: 1.6; }
+.cf:focus-within { background: rgba(0,87,184,0.03); }
+.cf-submit button { width: 100%; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 18px; background: var(--blue); color: #fff; border: none; cursor: pointer; transition: background 0.25s; border-radius: 0 0 var(--rl) var(--rl); }
+.cf-submit button:hover { background: var(--blue-d); }
+.form-ok { display: none; flex-direction: column; align-items: center; justify-content: center; padding: 56px 40px; text-align: center; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--rl); min-height: 260px; }
+.form-ok.show { display: flex; }
+.ok-icon { margin-bottom: 14px; }
+.ok-title { font-family: 'Bebas Neue', sans-serif; font-size: 34px; color: var(--ink); margin-bottom: 8px; }
+.ok-msg { font-size: 14px; color: var(--body); line-height: 1.7; }
+.cta-right { display: flex; flex-direction: column; gap: 16px; }
+.wa-card { background: linear-gradient(135deg, var(--blue), #0046A0); border-radius: var(--rl); padding: 36px; position: relative; overflow: hidden; }
+.wa-card::after { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.06); pointer-events: none; }
+.wa-lbl { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+.wa-title { font-family: 'Bebas Neue', sans-serif; font-size: 34px; line-height: 0.95; color: #fff; margin-bottom: 12px; }
+.wa-desc { font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+.wa-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 13px 24px; background: #fff; color: var(--blue); border-radius: 100px; position: relative; z-index: 1; transition: box-shadow 0.2s, transform 0.15s; }
+.wa-btn:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.2); transform: translateY(-1px); }
+.cinfo { background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--rl); overflow: hidden; }
+.ci-row { display: flex; align-items: center; gap: 14px; padding: 16px 20px; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+.ci-row:last-child { border-bottom: none; }
+.ci-row:hover { background: #fff; }
+.ci-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--blue-l); display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+.ci-lbl { font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: 1px; margin-bottom: 2px; }
+.ci-val { font-size: 13px; color: var(--body); }
+.ci-val a { color: var(--body); transition: color 0.2s; }
+.ci-val a:hover { color: var(--blue); }
+
+/* FOOTER */
+footer { background: var(--ink); padding: 52px 5vw 0; }
+.foot-top { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; }
+.foot-brand { display: flex; align-items: center; gap: 16px; }
+.foot-brand img { height: 48px; width: auto; }
+.foot-name { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2px; color: #fff; line-height: 1; margin-bottom: 3px; }
+.foot-motto { font-size: 12px; color: rgba(255,255,255,0.35); }
+.foot-socials { display: flex; gap: 10px; }
+.fsoc { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.45); transition: background 0.2s, color 0.2s, border-color 0.2s; }
+.fsoc:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+.foot-bot { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; flex-wrap: wrap; gap: 8px; }
+.foot-bot span { font-size: 12px; color: rgba(255,255,255,0.2); }
+
+/* BACK TO TOP */
+.btt { position: fixed; bottom: 28px; right: 28px; z-index: 500; width: 48px; height: 48px; border-radius: 50%; background: var(--blue); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,87,184,0.4); opacity: 0; transform: translateY(16px); pointer-events: none; transition: opacity 0.3s, transform 0.3s, background 0.2s; }
+.btt.show { opacity: 1; transform: translateY(0); pointer-events: all; }
+.btt:hover { background: var(--blue-d); transform: translateY(-2px); }
+
+/* MODAL */
+.modal-bg { position: fixed; inset: 0; z-index: 9998; background: rgba(13,27,51,0.7); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.modal-bg.open { opacity: 1; pointer-events: all; }
+.modal-box { background: #fff; border-radius: var(--rxl); max-width: 720px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; animation: mIn 0.3s cubic-bezier(0.22,1,0.36,1); }
+@keyframes mIn { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.modal-x { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--border); color: var(--muted); font-size: 14px; cursor: pointer; z-index: 2; transition: background 0.2s, color 0.2s; display: flex; align-items: center; justify-content: center; }
+.modal-x:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+.modal-img-wrap { width: 100%; height: 240px; overflow: hidden; border-radius: var(--rxl) var(--rxl) 0 0; background: var(--blue-l); }
+.modal-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.modal-img-ph { width: 100%; height: 240px; border-radius: var(--rxl) var(--rxl) 0 0; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; color: var(--blue-m); background: var(--blue-l); }
+.modal-body { padding: 36px 40px 44px; }
+.modal-badge { display: inline-block; font-size: 11px; font-weight: 700; color: var(--blue); background: var(--blue-l); padding: 4px 12px; border-radius: 100px; margin-bottom: 10px; }
+.modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1; color: var(--ink); margin-bottom: 4px; }
+.modal-sub { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; }
+.modal-ps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.modal-ps-box { padding: 20px; border-radius: var(--r); background: var(--bg); border: 1.5px solid var(--border); }
+.modal-ps-lbl { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.modal-ps-lbl.prob { color: #DC2626; }
+.modal-ps-lbl.sol { color: var(--blue); }
+.modal-ps-txt { font-size: 13.5px; line-height: 1.7; color: var(--body); }
+.modal-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.modal-tag { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 100px; background: var(--blue-l); color: var(--blue); }
+.modal-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 13px 28px; background: var(--blue); color: #fff; border-radius: 100px; transition: background 0.25s; }
+.modal-link:hover { background: var(--blue-d); }
+
+/* SCROLL REVEAL */
+.rv { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+.rv.in { opacity: 1; transform: none; }
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-right { justify-content: flex-start; margin-top: 40px; padding: 16px; }
+  .hero-img-wrap { max-width: 100%; box-shadow: 0 20px 60px rgba(0,87,184,0.12); }
+  .hero-img { aspect-ratio: 3/4; }
+  .hero-fc { bottom: 4px; left: 4px; }
+  .hero-badge { right: 4px; top: 4px; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .svc-card { grid-template-columns: 140px 1fr; gap: 32px; padding: 36px 36px; }
+  .svc-num { font-size: 64px; }
+  .bc-grid { grid-template-columns: 1fr; gap: 48px; }
+  .py-grid { grid-template-columns: 1fr; gap: 48px; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid::before { display: none; }
+  .cta-grid { grid-template-columns: 1fr; gap: 48px; }
+  .gal-grid { grid-template-columns: 1fr 1fr; }
+  .gal-item:nth-child(1) { grid-column: span 2; }
+  .gal-item:nth-child(5) { grid-column: span 2; }
 }
-.bc-bar-left{
-  display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+@media (max-width: 720px) {
+  /* Nav */
+  .nmenu { display: none; }
+  .nav-cta { display: none; }
+  .hbg { display: flex; }
+  nav { height: 64px; }
+
+  /* General spacing */
+  .sec { padding: 56px 5vw; }
+
+  /* Hero */
+  .hero-grid { gap: 32px; }
+  .hero-pill { font-size: 12px; }
+  .hero-h { margin-bottom: 20px; }
+  .hero-p { font-size: 15px; margin-bottom: 28px; }
+  .hero-btns { margin-bottom: 32px; gap: 10px; }
+  .btn-blue, .btn-outline { font-size: 13px; padding: 12px 22px; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .hstat { border-right: none; padding-right: 0; }
+  .hstat-n { font-size: 32px; }
+  .hero-img { aspect-ratio: 4/3; }
+  .hero-img-wrap { box-shadow: 0 12px 40px rgba(0,87,184,0.1); }
+  .hero-fc, .hero-badge { display: none; }
+
+  /* Ticker */
+  .ticker-inner span { font-size: 12px; padding: 0 20px; }
+
+  /* C++ bootcamp */
+  .bc-grid { gap: 36px; }
+  .bc-h { font-size: clamp(38px,10vw,56px); }
+  .bc-bg { font-size: 140px; }
+  .bc-cards { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .bc-card { padding: 12px 14px; }
+  .bc-lbl { font-size: 10px; }
+  .bc-val { font-size: 12px; }
+  .bc-btns { flex-direction: column; }
+  .flyer-col { margin-top: 0; }
+  .flyer-card { max-width: 100%; transform: none; }
+
+  /* Services */
+  .svc-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 32px; }
+  .svc-card { grid-template-columns: 1fr; gap: 0; padding: 28px 24px; }
+  .svc-left { flex-direction: row; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .svc-num { font-size: 48px; margin-bottom: 0; }
+  .svc-name { font-size: 32px; }
+  .svc-desc { font-size: 14px; margin-bottom: 20px; }
+  .svc-list { grid-template-columns: 1fr; gap: 8px; }
+
+  /* About */
+  .about-grid { gap: 36px; }
+  .about-imgs { grid-template-columns: 1fr 1fr; padding-bottom: 52px; }
+  .img-tall { grid-row: auto; aspect-ratio: 1; border-radius: var(--rl); }
+  .about-stat { padding: 10px 16px; gap: 12px; }
+  .as-n { font-size: 20px; }
+  .about-list { gap: 12px; margin: 20px 0 24px; }
+
+  /* Portfolio */
+  .port-grid { grid-template-columns: 1fr; }
+  .port-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 32px; }
+
+  /* Python bootcamp */
+  .py-grid { gap: 32px; }
+  .py-flyer-col { margin-top: 0; }
+  .py-flyer-card { max-width: 100%; transform: none; }
+
+  /* Gallery */
+  .gal-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 28px; }
+  .gal-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .gal-item { grid-column: auto !important; aspect-ratio: 1 !important; border-radius: var(--r); }
+
+  /* Process */
+  .proc-head { margin-bottom: 40px; }
+  .steps-grid { grid-template-columns: 1fr; gap: 12px; }
+  .step { padding: 24px 20px; }
+  .step-n { width: 48px; height: 48px; font-size: 20px; margin-bottom: 14px; }
+  .guarantee { flex-direction: column; padding: 22px; gap: 14px; }
+
+  /* Contact */
+  .cta-grid { gap: 36px; }
+  .cf-row { grid-template-columns: 1fr; }
+  .cf { border-right: none !important; }
+  .wa-title { font-size: 28px; }
+
+  /* Footer */
+  .foot-top { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .foot-brand img { height: 40px; }
+
+  /* Modal */
+  .modal-ps { grid-template-columns: 1fr; }
+  .modal-body { padding: 24px 20px 32px; }
+  .modal-title { font-size: 32px; }
+
+  /* Back to top */
+  .btt { bottom: 18px; right: 18px; width: 40px; height: 40px; }
 }
-.bc-bar-dot{
-  width:8px; height:8px; border-radius:50%; background:#22C55E;
-  flex-shrink:0; animation:bardot 2s ease-in-out infinite;
-}
-@keyframes bardot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,197,94,0.4);}50%{opacity:0.7;box-shadow:0 0 0 6px rgba(34,197,94,0);}}
-.bc-bar-label{
-  font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:3px;
-  text-transform:uppercase; color:#22C55E; flex-shrink:0;
-}
-.bc-bar-divider{
-  width:1px; height:28px; background:rgba(0,87,184,0.3); flex-shrink:0;
-}
-.bc-bar-title{
-  font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:1px;
-  color:#fff; line-height:1; flex-shrink:0;
-}
-.bc-bar-desc{
-  font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:1px;
-  color:rgba(255,255,255,0.45); white-space:nowrap;
-}
-.bc-bar-btn{
-  font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:2px;
-  text-transform:uppercase; padding:11px 24px;
-  background:#0057B8; color:#fff; text-decoration:none;
-  border:1px solid #0057B8; transition:background .2s;
-  white-space:nowrap; flex-shrink:0;
-  display:inline-flex; align-items:center; gap:8px;
-}
-.bc-bar-btn:hover{background:#0046A0;}
-@media(max-width:720px){
-  .bc-bar-desc{display:none;}
-  .bc-bar-divider{display:none;}
-  .bc-bar-inner{padding:14px 5vw;}
-}
-
-/* ─ HERO ─ */
-#hero{position:relative;z-index:1;min-height:100vh;padding:0 5vw;display:flex;flex-direction:column;justify-content:center;overflow:hidden;}
-.blob{position:absolute;border-radius:50%;filter:blur(110px);pointer-events:none;}
-.b1{width:750px;height:750px;top:-200px;right:-180px;background:radial-gradient(circle,rgba(0,87,184,0.28) 0%,transparent 65%);animation:bf 9s ease-in-out infinite;}
-.b2{width:500px;height:500px;bottom:-120px;left:-60px;background:radial-gradient(circle,rgba(0,87,184,0.13) 0%,transparent 65%);animation:bf 12s ease-in-out infinite reverse;}
-@keyframes bf{0%,100%{transform:translate(0,0);}50%{transform:translate(24px,-32px);}}
-.vline{position:absolute;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(0,87,184,0.15) 30%,rgba(0,87,184,0.15) 70%,transparent);pointer-events:none;}
-.hero-inner{position:relative;z-index:2;padding-top:80px;padding-bottom:90px;}
-.hlabel{display:inline-flex;align-items:center;gap:14px;margin-bottom:36px;opacity:0;animation:rise .8s ease .1s forwards;}
-.hlabel-dash{width:36px;height:1px;background:#0057B8;}
-.hlabel span{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#0057B8;}
-h1.hh{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,7vw,96px);line-height:.92;letter-spacing:1px;opacity:0;animation:rise .9s cubic-bezier(.22,1,.36,1) .2s forwards;}
-h1.hh .bl{color:#0057B8;}
-.hrow{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-top:56px;opacity:0;animation:rise .9s ease .38s forwards;}
-.hp{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.82);max-width:500px;}
-.hp strong{color:#fff;font-weight:700;}
-.hbtns{display:flex;gap:14px;flex-shrink:0;}
-.bfill{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:15px 36px;background:#0057B8;color:#fff;text-decoration:none;border:1px solid #0057B8;transition:background .25s;white-space:nowrap;}
-.bfill:hover{background:#0046A0;}
-.bline{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;padding:15px 36px;background:transparent;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,0.22);transition:border-color .25s,background .25s;white-space:nowrap;}
-.bline:hover{border-color:#0057B8;background:rgba(0,87,184,0.12);}
-.ticker{margin-top:80px;border-top:1px solid rgba(0,87,184,0.2);border-bottom:1px solid rgba(0,87,184,0.2);padding:14px 0;overflow:hidden;opacity:0;animation:rise .6s ease .7s forwards;}
-.tinner{display:flex;width:max-content;animation:tscroll 30s linear infinite;}
-.tinner span{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.45);padding:0 36px;white-space:nowrap;}
-.tinner .dot{color:#0057B8;}
-
-/* ─ NUMBAR ─ */
-#numbar{position:relative;z-index:1;background:#0057B8;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,0.1);}
-.nbi{padding:40px 44px;border-right:1px solid rgba(255,255,255,0.12);}
-.nbi:first-child{padding-left:5vw;}
-.nbi:last-child{border-right:none;padding-right:5vw;}
-.nbv{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:3px;color:rgba(255,255,255,0.45);margin-bottom:8px;text-transform:uppercase;line-height:1;}
-.nbl{font-family:'Syne',sans-serif;font-size:15px;line-height:1.6;color:#fff;font-weight:500;}
-
-/* ─ SECTIONS ─ */
-.sec{position:relative;z-index:1;padding:120px 5vw;}
-.sdark{background:#060B18;}
-.sbase{background:#03060E;}
-.bt{border-top:1px solid rgba(0,87,184,0.2);}
-.bb{border-bottom:1px solid rgba(0,87,184,0.2);}
-.eye{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
-.eye-r{width:26px;height:1px;background:#0057B8;flex-shrink:0;}
-.eye span{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:4px;text-transform:uppercase;color:#0057B8;}
-.stitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,4.5vw,58px);line-height:.95;letter-spacing:1px;color:#fff;}
-.stitle .bl{color:#0057B8;}
-.sbody{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,0.82);max-width:560px;}
-
-/* ─ ABOUT ─ */
-#about .gl{display:grid;grid-template-columns:1fr 1.05fr;gap:96px;align-items:center;}
-.mbox{border:1px solid rgba(0,87,184,0.5);background:#0A1020;padding:52px 44px;position:relative;}
-.mbox::before,.mbox::after{content:'';position:absolute;width:24px;height:24px;}
-.mbox::before{top:-1px;left:-1px;border-top:2px solid #0057B8;border-left:2px solid #0057B8;}
-.mbox::after{bottom:-1px;right:-1px;border-bottom:2px solid #0057B8;border-right:2px solid #0057B8;}
-.mtag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#0057B8;margin-bottom:20px;}
-.mtext{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,3.5vw,48px);line-height:.95;letter-spacing:1px;color:#fff;}
-.mtext .bl{color:#0057B8;}
-.mrule{width:36px;height:2px;background:#0057B8;margin:24px 0;}
-.mcode{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:2;color:rgba(255,255,255,0.4);}
-.mcode .c{color:#0057B8;}
-.pills{display:flex;gap:0;margin-top:40px;border:1px solid rgba(0,87,184,0.22);}
-.pill{flex:1;padding:18px 20px;border-right:1px solid rgba(0,87,184,0.22);}
-.pill:last-child{border-right:none;}
-.pillnum{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;margin-bottom:7px;}
-.pillname{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:1px;color:#fff;line-height:1.2;}
-
-/* ─ SERVICES ─ */
-.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:60px;}
-.sgrid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(0,87,184,0.22);gap:1px;background:rgba(0,87,184,0.22);}
-.scard{background:#03060E;padding:52px 40px 44px;position:relative;overflow:hidden;transition:background .3s;}
-.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#0057B8;transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.22,1,.36,1);}
-.scard:hover::before{transform:scaleX(1);}
-.scard:hover{background:#0A1020;}
-.cnum{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:3px;color:#0057B8;margin-bottom:36px;}
-.cname{font-family:'Bebas Neue',sans-serif;font-size:42px;line-height:.95;letter-spacing:1px;color:#fff;margin-bottom:6px;}
-.csub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;margin-bottom:22px;}
-.cdesc{font-size:14px;line-height:1.75;color:rgba(255,255,255,0.82);margin-bottom:28px;}
-.clist{display:flex;flex-direction:column;gap:9px;}
-.ci{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.75);transition:color .2s;}
-.scard:hover .ci{color:#fff;}
-.ci::before{content:'';display:inline-block;width:4px;height:4px;background:#0057B8;flex-shrink:0;}
-
-/* ─ PORTFOLIO ─ */
-.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(0,87,184,0.22);border:1px solid rgba(0,87,184,0.22);}
-.pcard{background:#03060E;cursor:pointer;transition:background .3s;display:flex;flex-direction:column;}
-.pcard:hover{background:#0A1020;}
-.pcard-img{position:relative;overflow:hidden;height:260px;background:#0A1020;display:flex;align-items:center;justify-content:center;}
-.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block;}
-.pcard:hover .pcard-img img{transform:scale(1.04);}
-.pcard-overlay{position:absolute;inset:0;background:rgba(0,87,184,0.75);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;}
-.pcard:hover .pcard-overlay{opacity:1;}
-.pcard-overlay-text{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#fff;}
-.pcard-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:rgba(0,87,184,0.3);}
-.pcard-body{padding:36px 36px 40px;flex:1;display:flex;flex-direction:column;}
-.pcard-num{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;color:#0057B8;margin-bottom:12px;}
-.pcard-name{font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1;letter-spacing:1px;color:#fff;margin-bottom:6px;}
-.pcard-sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,87,184,0.8);margin-bottom:16px;}
-.pcard-desc{font-size:14px;line-height:1.75;color:rgba(255,255,255,0.78);flex:1;}
-.pcard-link{display:inline-block;margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:#0057B8;text-decoration:none;transition:color .2s;}
-.pcard-link:hover{color:#fff;}
-
-/* ─ MODAL ─ */
-.modal-overlay{position:fixed;inset:0;z-index:9999;background:rgba(3,6,14,0.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s;}
-.modal-overlay.open{opacity:1;pointer-events:all;}
-.modal-box{background:#060B18;border:1px solid rgba(0,87,184,0.4);max-width:760px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:modalIn .35s cubic-bezier(.22,1,.36,1);}
-@keyframes modalIn{from{transform:translateY(32px);opacity:0;}to{transform:translateY(0);opacity:1;}}
-.modal-close{position:absolute;top:20px;right:20px;background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);font-size:14px;width:36px;height:36px;cursor:pointer;transition:border-color .2s,color .2s;z-index:2;}
-.modal-close:hover{border-color:#0057B8;color:#fff;}
-.modal-img-placeholder{width:100%;height:220px;background:#0A1020;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:3px;color:rgba(0,87,184,0.25);}
-.modal-inner{padding:40px 44px 48px;}
-.modal-div{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;margin-bottom:10px;}
-.modal-title{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;letter-spacing:1px;color:#fff;margin-bottom:6px;}
-.modal-sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-bottom:28px;}
-.modal-rule{width:36px;height:2px;background:#0057B8;margin-bottom:28px;}
-.modal-ps{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;}
-.modal-ps-box{padding:24px;background:#0A1020;border:1px solid rgba(0,87,184,0.2);}
-.modal-ps-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;}
-.modal-ps-label.prob{color:rgba(255,100,100,0.7);}
-.modal-ps-label.sol{color:#0057B8;}
-.modal-ps-text{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.78);}
-.modal-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
-.modal-tag{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(0,87,184,0.4);color:rgba(255,255,255,0.55);}
-.modal-livelink{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:13px 28px;background:#0057B8;color:#fff;text-decoration:none;transition:background .25s;}
-.modal-livelink:hover{background:#0046A0;}
-
-/* ─ ACADEMY ─ */
-.ac-strip{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.ac-stats{display:flex;gap:0;margin-top:36px;border:1px solid rgba(0,87,184,0.22);}
-.ac-stat{flex:1;padding:18px 20px;border-right:1px solid rgba(0,87,184,0.22);}
-.ac-stat:last-child{border-right:none;}
-.ac-stat-val{font-family:'Bebas Neue',sans-serif;font-size:42px;color:#0057B8;line-height:1;}
-.ac-stat-label{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px;}
-.ac-btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
-.ac-winners{display:flex;flex-direction:column;gap:0;border:1px solid rgba(0,87,184,0.22);}
-.ac-winner-label{display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1px solid rgba(0,87,184,0.22);}
-.ac-winner-label span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#0057B8;}
-.ac-winner-card{padding:18px 20px;border-bottom:1px solid rgba(0,87,184,0.12);transition:background .2s;}
-.ac-winner-card:last-child{border-bottom:none;}
-.ac-winner-card:hover{background:rgba(0,87,184,0.06);}
-.ac-award{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:#0057B8;margin-bottom:5px;}
-.ac-winner-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;}
-.ac-winner-proj{font-size:12px;color:rgba(255,255,255,0.5);}
-
-/* ─ PROCESS ─ */
-#process .gl{display:grid;grid-template-columns:1fr 1.8fr;gap:96px;align-items:start;margin-top:64px;}
-.pleft{position:sticky;top:100px;}
-.steps{display:flex;flex-direction:column;}
-.step{display:grid;grid-template-columns:60px 1fr;gap:24px;align-items:start;padding:32px 0;border-bottom:1px solid rgba(0,87,184,0.2);cursor:default;}
-.step:first-child{border-top:1px solid rgba(0,87,184,0.2);}
-.sn{font-family:'Bebas Neue',sans-serif;font-size:40px;color:#0057B8;line-height:1;opacity:.22;transition:opacity .35s;}
-.step:hover .sn{opacity:1;}
-.st{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px;margin-bottom:9px;}
-.sd{font-size:13.5px;line-height:1.75;color:rgba(255,255,255,0.78);}
-.guarantee{margin-top:36px;padding:28px;background:#0A1020;border:1px solid rgba(0,87,184,0.22);border-left:3px solid #0057B8;}
-.gtag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;margin-bottom:10px;}
-.gbody{font-size:14px;line-height:1.75;color:rgba(255,255,255,0.78);}
-
-/* ─ CONTACT ─ */
-#cta{position:relative;z-index:1;background:#03060E;padding:120px 5vw;border-top:1px solid rgba(0,87,184,0.2);overflow:hidden;}
-#cta::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,87,184,0.12) 0%,transparent 65%);pointer-events:none;}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.clabel{display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;}
-.clr{width:28px;height:1px;background:#0057B8;}
-.clabel span{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#0057B8;}
-.ch{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5.5vw,76px);line-height:.90;letter-spacing:2px;color:#fff;margin-bottom:20px;}
-.ch .bl{color:#0057B8;}
-.cp{font-size:14.5px;line-height:1.8;color:rgba(255,255,255,0.65);margin-bottom:36px;}
-.cform{display:flex;flex-direction:column;gap:0;border:1px solid rgba(0,87,184,0.3);background:#060B18;}
-.cform-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid rgba(0,87,184,0.18);}
-.cform-row.full{grid-template-columns:1fr;}
-.cfield{display:flex;flex-direction:column;position:relative;border-right:1px solid rgba(0,87,184,0.18);}
-.cfield:last-child{border-right:none;}
-.cfield label{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;padding:14px 20px 0;}
-.cfield input,.cfield select,.cfield textarea{font-family:'Syne',sans-serif;font-size:13.5px;background:transparent;border:none;outline:none;color:#fff;padding:8px 20px 16px;transition:background .2s;width:100%;}
-.cfield input::placeholder,.cfield textarea::placeholder{color:rgba(255,255,255,0.2);}
-.cfield select{color:rgba(255,255,255,0.55);cursor:pointer;}
-.cfield select option{background:#060B18;color:#fff;}
-.cfield textarea{resize:none;min-height:110px;line-height:1.6;}
-.cfield:focus-within{background:rgba(0,87,184,0.06);}
-.cfield:focus-within label{color:#fff;}
-.cform-submit{padding:0;}
-.cform-submit button{width:100%;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:20px;background:#0057B8;color:#fff;border:none;cursor:pointer;transition:background .25s;display:flex;align-items:center;justify-content:center;gap:10px;}
-.cform-submit button:hover{background:#0046A0;}
-.contact-right{display:flex;flex-direction:column;gap:0;}
-.cright-top{padding:40px;background:#0057B8;position:relative;overflow:hidden;margin-bottom:1px;}
-.cright-top::after{content:'WA';position:absolute;bottom:-30px;right:-10px;font-family:'Bebas Neue',sans-serif;font-size:130px;letter-spacing:4px;color:rgba(255,255,255,0.06);pointer-events:none;}
-.cright-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:12px;}
-.cright-title{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:.95;letter-spacing:1px;color:#fff;margin-bottom:16px;}
-.cright-desc{font-size:13.5px;line-height:1.75;color:rgba(255,255,255,0.75);margin-bottom:28px;}
-.wa-btn{display:inline-flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:16px 28px;background:#fff;color:#0057B8;text-decoration:none;font-weight:700;transition:background .25s,color .25s;position:relative;z-index:1;}
-.wa-btn:hover{background:#03060E;color:#fff;}
-.wa-icon{font-size:16px;}
-.cright-info{border:1px solid rgba(0,87,184,0.3);background:#060B18;display:flex;flex-direction:column;}
-.cinfo-item{display:flex;align-items:center;gap:16px;padding:20px 28px;border-bottom:1px solid rgba(0,87,184,0.15);transition:background .2s;}
-.cinfo-item:last-child{border-bottom:none;}
-.cinfo-item:hover{background:rgba(0,87,184,0.06);}
-.cinfo-icon{width:36px;height:36px;background:rgba(0,87,184,0.15);border:1px solid rgba(0,87,184,0.3);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
-.cinfo-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#0057B8;margin-bottom:4px;}
-.cinfo-val{font-size:13px;color:rgba(255,255,255,0.75);}
-.cinfo-val a{color:rgba(255,255,255,0.75);text-decoration:none;transition:color .2s;}
-.cinfo-val a:hover{color:#fff;}
-.form-success{display:none;flex-direction:column;align-items:center;justify-content:center;padding:60px 40px;text-align:center;border:1px solid rgba(0,87,184,0.3);background:#060B18;min-height:300px;}
-.form-success.show{display:flex;}
-.success-icon{font-size:40px;margin-bottom:20px;}
-.success-title{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:1px;color:#fff;margin-bottom:10px;}
-.success-msg{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;}
-
-/* ─ FOOTER ─ */
-footer{position:relative;z-index:1;background:#060B18;border-top:1px solid rgba(0,87,184,0.2);padding:80px 5vw 36px;}
-.fgrid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(0,87,184,0.2);}
-.fbrand img{height:90px;width:auto;object-fit:contain;display:block;margin-bottom:20px;}
-.fbname{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#fff;margin-bottom:8px;}
-.fbmotto{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:2.5px;color:#0057B8;margin-bottom:24px;}
-.fbdesc{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.45);max-width:280px;}
-.fch{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:22px;}
-.flinks{list-style:none;display:flex;flex-direction:column;gap:13px;}
-.flinks a{font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s;}
-.flinks a:hover{color:#fff;}
-.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
-.fbot span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,0.22);}
-
-/* ─ REVEAL ─ */
-@keyframes rise{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-.rv{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);}
-.rv.in{opacity:1;transform:translateY(0);}
-
-/* ─ RESPONSIVE ─ */
-@media(max-width:1100px){
-  #about .gl{grid-template-columns:1fr;gap:56px;}
-  .sgrid{grid-template-columns:1fr 1fr;}
-  #process .gl{grid-template-columns:1fr;gap:48px;}
-  .pleft{position:static;}
-  .fgrid{grid-template-columns:1fr 1fr;gap:40px;}
-  #numbar{grid-template-columns:repeat(2,1fr);}
-  .ac-strip{grid-template-columns:1fr;gap:48px;}
-  .bc-inner{grid-template-columns:1fr;gap:32px;}
-  .bc-right{display:flex;}
-  .bc-img-wrap img{max-height:360px;object-fit:cover;}
-}
-@media(max-width:720px){
-  .nmenu{display:none;}
-  .nbtn{display:none;}
-  .hamburger{display:flex;}
-  .sec{padding:72px 5vw;}
-  .hrow{flex-direction:column;align-items:flex-start;}
-  .hbtns{flex-wrap:wrap;}
-  #numbar{grid-template-columns:1fr 1fr;}
-  .fgrid{grid-template-columns:1fr;}
-  .sgrid{grid-template-columns:1fr;}
-  .shead{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:40px;}
-  .pgrid{grid-template-columns:1fr;}
-  .pcard-img{height:200px;}
-  .pcard-body{padding:24px 24px 28px;}
-  .modal-ps{grid-template-columns:1fr;}
-  .modal-inner{padding:24px 20px 32px;}
-  .modal-title{font-size:34px;}
-  .contact-grid{grid-template-columns:1fr;gap:40px;}
-  .cform-row{grid-template-columns:1fr;}
-  .cfield{border-right:none;}
-  .step{grid-template-columns:44px 1fr;gap:16px;}
-  .bc-stats{flex-direction:column;}
-  .bc-stat{border-right:none;border-bottom:1px solid rgba(0,87,184,0.22);}
-  .bc-stat:last-child{border-bottom:none;}
-}
-@media(max-width:480px){
-  .pills{flex-direction:column;}
-  .pill{border-right:none;border-bottom:1px solid rgba(0,87,184,0.22);}
-  .pill:last-child{border-bottom:none;}
-  .nbi{padding:24px 0 24px 20px;}
-  .pcard-img{height:180px;}
-  .pcard-body{padding:20px 18px 24px;}
-  .pcard-name{font-size:28px;}
-  #numbar{grid-template-columns:1fr;}
-  .sec{padding:56px 5vw;}
+@media (max-width: 480px) {
+  .sec { padding: 48px 4vw; }
+  .hero-h { font-size: 44px; }
+  .hero-btns { flex-direction: column; }
+  .btn-blue, .btn-outline, .btn-white, .btn-outwhite { width: 100%; justify-content: center; }
+  .bc-btns { flex-direction: column; }
+  .bc-btns a { width: 100%; justify-content: center; }
+  .about-imgs { grid-template-columns: 1fr; gap: 12px; padding-bottom: 60px; }
+  .img-tall { aspect-ratio: 3/2; }
+  .gal-grid { grid-template-columns: 1fr; gap: 10px; }
+  .gal-item { aspect-ratio: 16/9 !important; border-radius: var(--r); }
+  .svc-head .sec-body { display: none; }
+  .py-stats { grid-template-columns: repeat(3,1fr); }
 }
 </style>
 </head>
 <body>
 
-<!-- FIXED HEADER -->
-<div id="site-header">
-  <nav>
-    <a href="#" class="nlogo"><img src="logo.png" alt="NOLAP Technologies"></a>
-    <ul class="nmenu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#cta">Contact</a></li>
-    </ul>
-    <a href="#cta" class="nbtn">Work With Us</a>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-</div>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nlogo"><img src="logo.png" alt="NOLAP Technologies"></a>
+  <ul class="nmenu">
+    <li><a href="#bootcamp">Academy</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#cta">Contact</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Work With Us</a>
+  <button class="hbg" id="hbg" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
 <!-- MOBILE DRAWER -->
-<div class="mobile-drawer" id="mobileDrawer">
+<div class="drawer" id="drawer">
   <ul>
-    <li><a href="#about" onclick="closeMenu()">About</a></li>
-    <li><a href="#services" onclick="closeMenu()">Services</a></li>
-    <li><a href="portfolio.html" onclick="closeMenu()">Portfolio</a></li>
-    <li><a href="#process" onclick="closeMenu()">Process</a></li>
-    <li><a href="#cta" onclick="closeMenu()">Contact</a></li>
+    <li><a href="#bootcamp">Academy</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#cta">Contact</a></li>
   </ul>
-  <div class="drawer-cta"><a href="#cta" onclick="closeMenu()">Work With Us</a></div>
+  <a href="#cta" class="drawer-cta">Work With Us →</a>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
-     BOOTCAMP ANNOUNCEMENT BAR
-══════════════════════════════════════════════════════════ -->
-<div id="bootcamp-bar">
-  <div class="bc-bar-inner">
-    <div class="bc-bar-left">
-      <div class="bc-bar-dot"></div>
-      <span class="bc-bar-label">Now Enrolling</span>
-      <div class="bc-bar-divider"></div>
-      <span class="bc-bar-title">C++ Mastery Bootcamp</span>
-      <span class="bc-bar-desc">Live sessions on Google Meet · All levels welcome · NOLAP Academy</span>
-    </div>
-    <a href="https://academy.nolaptech.com" class="bc-bar-btn">
-      Register Now →
-    </a>
-  </div>
-</div>
-
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <section id="hero">
-  <div class="blob b1"></div>
-  <div class="blob b2"></div>
-  <div class="vline" style="left:33.33%"></div>
-  <div class="vline" style="left:66.66%"></div>
-  <div class="hero-inner">
-    <div class="hlabel"><div class="hlabel-dash"></div><span>Africa's Digital Architecture Firm</span></div>
-    <h1 class="hh">Architecting<br>Systems<br><span class="bl">From Zero.</span></h1>
-    <div class="hrow">
-      <p class="hp">We build <strong>software & digital systems</strong>, train <strong>elite tech talent</strong>, and scale <strong>brands across Africa</strong>. If it needs to be built right — NOLAP builds it.</p>
-      <div class="hbtns">
-        <a href="#services" class="bfill">Our Services</a>
-        <a href="#cta" class="bline">Work With Us</a>
+  <div class="hero-blob hero-blob1"></div>
+  <div class="hero-blob hero-blob2"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-pill"><div class="hero-pill-dot"></div>Africa's Digital Architecture Firm</div>
+      <h1 class="hero-h">Architecting<br>Systems<br><span class="bl">From Zero.</span></h1>
+      <p class="hero-p">We build <strong>software &amp; digital systems</strong>, train <strong>elite tech talent</strong>, and scale <strong>brands across Africa</strong>. If it needs to be built right — NOLAP builds it.</p>
+      <div class="hero-btns">
+        <a href="#services" class="btn-blue">Explore Our Services</a>
+        <a href="#cta" class="btn-outline">Work With Us</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">3</div><div class="hstat-l">Divisions</div></div>
+        <div class="hstat"><div class="hstat-n">10+</div><div class="hstat-l">Projects Delivered</div></div>
+        <div class="hstat"><div class="hstat-n">21+</div><div class="hstat-l">Devs Trained</div></div>
       </div>
     </div>
-    <div class="ticker">
-      <div class="tinner">
-        <span>Software Development</span><span class="dot"> ✦ </span><span>Web Architecture</span><span class="dot"> ✦ </span><span>Brand Scaling</span><span class="dot"> ✦ </span><span>Digital Marketing</span><span class="dot"> ✦ </span><span>Tech Training</span><span class="dot"> ✦ </span><span>Systems Design</span><span class="dot"> ✦ </span><span>NOLAP Technologies</span><span class="dot"> ✦ </span>
-        <span>Software Development</span><span class="dot"> ✦ </span><span>Web Architecture</span><span class="dot"> ✦ </span><span>Brand Scaling</span><span class="dot"> ✦ </span><span>Digital Marketing</span><span class="dot"> ✦ </span><span>Tech Training</span><span class="dot"> ✦ </span><span>Systems Design</span><span class="dot"> ✦ </span><span>NOLAP Technologies</span><span class="dot"> ✦ </span>
+    <div class="hero-right rv">
+      <div class="hero-img-wrap">
+        <img src="nolap1.jpg" alt="NOLAP Technologies" class="hero-img" id="heroImg">
       </div>
+      <div class="hero-fc">
+        <div class="hero-fc-l">Projects Delivered</div>
+        <div class="hero-fc-v">10+</div>
+        <div class="hero-fc-s">&#x2191; Growing fast</div>
+      </div>
+      <div class="hero-badge">Ghana &middot; West Africa</div>
     </div>
   </div>
 </section>
 
-<!-- NUMBAR -->
-<div id="numbar">
-  <div class="nbi"><div class="nbv">BUILD</div><div class="nbl">Software, websites & digital systems — architected from zero, delivered to last.</div></div>
-  <div class="nbi"><div class="nbv">SCALE</div><div class="nbl">Brands grown through strategy, advertising, and content that commands real attention.</div></div>
-  <div class="nbi"><div class="nbv">TRAIN</div><div class="nbl">Elite African tech talent — developed, refined, and ready to execute at the highest level.</div></div>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Software Development</span><span class="tdot"> &#10022; </span>
+    <span>Web Architecture</span><span class="tdot"> &#10022; </span>
+    <span>Brand Scaling</span><span class="tdot"> &#10022; </span>
+    <span>Digital Marketing</span><span class="tdot"> &#10022; </span>
+    <span>Tech Training</span><span class="tdot"> &#10022; </span>
+    <span>Systems Design</span><span class="tdot"> &#10022; </span>
+    <span>NOLAP Technologies</span><span class="tdot"> &#10022; </span>
+    <span>Software Development</span><span class="tdot"> &#10022; </span>
+    <span>Web Architecture</span><span class="tdot"> &#10022; </span>
+    <span>Brand Scaling</span><span class="tdot"> &#10022; </span>
+    <span>Digital Marketing</span><span class="tdot"> &#10022; </span>
+    <span>Tech Training</span><span class="tdot"> &#10022; </span>
+    <span>Systems Design</span><span class="tdot"> &#10022; </span>
+    <span>NOLAP Technologies</span><span class="tdot"> &#10022; </span>
+  </div>
 </div>
 
-<!-- ABOUT -->
-<section id="about" class="sec sdark bt bb">
-  <div class="gl">
-    <div class="mbox rv">
-      <div class="mtag">// nolap_technologies.mandate</div>
-      <div class="mtext">Built to<br>Dominate<br><span class="bl">Africa's</span><br>Digital<br>Landscape.</div>
-      <div class="mrule"></div>
-      <div class="mcode">
-        <span class="c">const</span> status &nbsp;= <span class="c">"building"</span><br>
-        <span class="c">const</span> location = <span class="c">"Africa"</span><br>
-        <span class="c">const</span> ceiling &nbsp;= <span class="c">null</span>
+<!-- ═══ C++ BOOTCAMP ═══ -->
+<section id="bootcamp" class="sec">
+  <div class="bc-bg">C++</div>
+  <div class="bc-grid">
+    <div>
+      <div class="live-pill"><div class="live-dot"></div><span class="live-txt">Now Enrolling &mdash; Spots Available</span></div>
+      <div class="bc-tag"><div class="tag-dot"></div>NOLAP Academy</div>
+      <h2 class="bc-h">C++ Mastery<br><span class="bl">Bootcamp.</span></h2>
+      <p class="bc-p">Level up your programming with our intensive C++ bootcamp &mdash; from zero to confident. Built for all levels, delivered live on Google Meet by NOLAP Academy instructors. Visit the Academy for full details and to register.</p>
+      <div class="bc-cards">
+        <div class="bc-card"><div class="bc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="bc-lbl">Location</div><div class="bc-val">Live on Google Meet</div></div></div>
+        <div class="bc-card"><div class="bc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><div class="bc-lbl">Who</div><div class="bc-val">All levels welcome</div></div></div>
+        <div class="bc-card"><div class="bc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><div><div class="bc-lbl">Delivered by</div><div class="bc-val">NOLAP Academy</div></div></div>
+        <div class="bc-card"><div class="bc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div><div><div class="bc-lbl">Outcome</div><div class="bc-val">Certificate + project</div></div></div>
+      </div>
+      <div class="bc-btns">
+        <a href="https://academy.nolaptech.com" target="_blank" class="btn-blue">View Details &amp; Register &#8594;</a>
+        <a href="#cta" class="btn-outline">Ask a Question</a>
+      </div>
+    </div>
+    <div class="flyer-col rv">
+      <div class="flyer-card" id="flyerCard">
+        <img src="c++.png" alt="C++ Mastery Bootcamp Flyer" id="flyerImg" style="width:100%;display:block;">
+      </div>
+      <p class="flyer-cap">C++ Mastery Bootcamp &mdash; NOLAP Academy</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" class="sec">
+  <div class="svc-head rv">
+    <div>
+      <div class="tag"><div class="tag-dot"></div>What We Deliver</div>
+      <h2 class="sec-title">Our Services.</h2>
+    </div>
+    <p class="sec-body" style="max-width:340px;">Three divisions. Every capability you need to build, grow, and dominate your market in Africa.</p>
+  </div>
+  <div class="svc-grid">
+
+    <div class="svc-card svc-card-1 rv">
+      <div class="svc-stripe"></div>
+      <div class="svc-left">
+        <div class="svc-num">01</div>
+        <div class="svc-label">Systems</div>
+      </div>
+      <div class="svc-right">
+        <div class="svc-name">NOLAP SYSTEMS</div>
+        <div class="svc-sub">Software &middot; Web &middot; Development</div>
+        <p class="svc-desc">We architect and build digital systems from the ground up. Websites, software solutions, and full digital infrastructure &mdash; built to last, built to scale.</p>
+        <ul class="svc-list">
+          <li><span class="svc-dot"></span>Website Design &amp; Development</li>
+          <li><span class="svc-dot"></span>Custom Software Solutions</li>
+          <li><span class="svc-dot"></span>System Architecture &amp; Planning</li>
+          <li><span class="svc-dot"></span>Frontend &amp; Backend Development</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="svc-card svc-card-2 rv">
+      <div class="svc-stripe"></div>
+      <div class="svc-left">
+        <div class="svc-num">02</div>
+        <div class="svc-label">Academy</div>
+      </div>
+      <div class="svc-right">
+        <div class="svc-name">NOLAP ACADEMY</div>
+        <div class="svc-sub">Training &middot; Pipeline &middot; Talent</div>
+        <p class="svc-desc">Africa's next generation of tech professionals, trained here. Skilled developers and digital professionals ready to execute at the highest level.</p>
+        <ul class="svc-list">
+          <li><span class="svc-dot"></span>Tech Skills Training</li>
+          <li><span class="svc-dot"></span>Developer Pipeline Programme</li>
+          <li><span class="svc-dot"></span>Digital Skills Bootcamps</li>
+          <li><span class="svc-dot"></span>Corporate Tech Training</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="svc-card svc-card-3 rv">
+      <div class="svc-stripe"></div>
+      <div class="svc-left">
+        <div class="svc-num">03</div>
+        <div class="svc-label">Agency</div>
+      </div>
+      <div class="svc-right">
+        <div class="svc-name">NOLAP AGENCY</div>
+        <div class="svc-sub">Marketing &middot; Branding &middot; Ads</div>
+        <p class="svc-desc">We scale brands. From digital advertising and content strategy to full brand identity &mdash; driving the visibility and leads that grow your business.</p>
+        <ul class="svc-list">
+          <li><span class="svc-dot"></span>Digital Advertising &amp; Campaigns</li>
+          <li><span class="svc-dot"></span>Brand Identity &amp; Strategy</li>
+          <li><span class="svc-dot"></span>Social Media Management</li>
+          <li><span class="svc-dot"></span>Content Production</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="sec">
+  <div class="about-grid">
+    <div class="about-imgs rv">
+      <div class="img-tall"><img src="nolap1.jpg" alt="NOLAP Technologies" id="aboutImg1"></div>
+      <div class="img-sq"><img src="nolap2.jpg" alt="NOLAP Technologies" id="aboutImg2"></div>
+      <div class="img-sq" id="aboutImg3Wrap"><img src="gallery6.jpg" alt="NOLAP Technologies" id="aboutImg3" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="about-stat">
+        <div class="as-item"><div class="as-n">3</div><div class="as-l">Divisions</div></div>
+        <div class="as-div"></div>
+        <div class="as-item"><div class="as-n">10+</div><div class="as-l">Projects</div></div>
+        <div class="as-div"></div>
+        <div class="as-item"><div class="as-n">21+</div><div class="as-l">Trained</div></div>
       </div>
     </div>
     <div class="rv">
-      <div class="eye"><div class="eye-r"></div><span>Who We Are</span></div>
-      <h2 class="stitle">Three Divisions.<br><span class="bl">One Engine.</span></h2>
-      <p class="sbody" style="margin-top:24px">NOLAP Technologies is not a freelancer marketplace or a side project. We are a structured, high-performance operation built to deliver real results at scale across Africa's digital economy.</p>
-      <p class="sbody" style="margin-top:18px">Our vision is to be the engine of Africa's digital future. Every system we architect, every brand we scale, and every developer we train advances that mandate.</p>
-      <div class="pills">
-        <div class="pill"><div class="pillnum">Division 01</div><div class="pillname">NOLAP<br>SYSTEMS</div></div>
-        <div class="pill"><div class="pillnum">Division 02</div><div class="pillname">NOLAP<br>ACADEMY</div></div>
-        <div class="pill"><div class="pillnum">Division 03</div><div class="pillname">NOLAP<br>AGENCY</div></div>
-      </div>
+      <div class="tag"><div class="tag-dot"></div>Who We Are</div>
+      <h2 class="sec-title">Three Divisions.<br><span class="bl">One Engine.</span></h2>
+      <p class="sec-body">NOLAP Technologies is not a freelancer marketplace or a side project. We are a structured, high-performance operation built to deliver real results at scale across Africa's digital economy.</p>
+      <ul class="about-list">
+        <li class="alist-item">
+          <div class="alist-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg></div>
+          <div><span class="alist-title">NOLAP Systems</span><span class="alist-desc">Software development, web architecture &amp; full digital infrastructure built to last.</span></div>
+        </li>
+        <li class="alist-item">
+          <div class="alist-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div><span class="alist-title">NOLAP Academy</span><span class="alist-desc">Tech training programmes and a developer pipeline powering Africa's digital future.</span></div>
+        </li>
+        <li class="alist-item">
+          <div class="alist-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div><span class="alist-title">NOLAP Agency</span><span class="alist-desc">Digital advertising, brand strategy and content production that drives real growth.</span></div>
+        </li>
+      </ul>
+      <a href="#cta" class="btn-blue">Start a Project &#8594;</a>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="sec sbase bb">
-  <div class="shead">
+<!-- ═══ PORTFOLIO ═══ -->
+<section id="portfolio" class="sec">
+  <div class="port-head rv">
     <div>
-      <div class="eye rv"><div class="eye-r"></div><span>What We Deliver</span></div>
-      <h2 class="stitle rv">Our<br>Services.</h2>
+      <div class="tag"><div class="tag-dot"></div>Our Work</div>
+      <h2 class="sec-title">Featured Projects.</h2>
     </div>
-    <p class="sbody rv" style="max-width:360px;margin-top:0">Three divisions. Every capability you need to build, grow, and dominate your market in Africa.</p>
+    <p class="sec-body" style="max-width:320px;">Real systems. Real clients. Real results. Click any project to see the full story.</p>
   </div>
-  <div class="sgrid">
-    <div class="scard rv">
-      <div class="cnum">01 — SYSTEMS</div><div class="cname">NOLAP<br>SYSTEMS</div><div class="csub">Software · Web · Development</div>
-      <p class="cdesc">We architect and build digital systems from the ground up. Websites, software solutions, and full digital infrastructure — built to last, built to scale.</p>
-      <div class="clist"><div class="ci">Website Design & Development</div><div class="ci">Custom Software Solutions</div><div class="ci">System Architecture & Planning</div><div class="ci">Frontend & Backend Development</div></div>
-    </div>
-    <div class="scard rv">
-      <div class="cnum">02 — ACADEMY</div><div class="cname">NOLAP<br>ACADEMY</div><div class="csub">Training · Pipeline · Talent</div>
-      <p class="cdesc">Africa's next generation of tech professionals, trained here. The Academy delivers skilled developers and digital professionals ready to execute at the highest level.</p>
-      <div class="clist"><div class="ci">Tech Skills Training</div><div class="ci">Developer Pipeline Programme</div><div class="ci">Digital Skills Bootcamps</div><div class="ci">Corporate Tech Training</div></div>
-    </div>
-    <div class="scard rv">
-      <div class="cnum">03 — AGENCY</div><div class="cname">NOLAP<br>AGENCY</div><div class="csub">Marketing · Branding · Ads</div>
-      <p class="cdesc">We scale brands. From digital advertising and content strategy to full brand identity — NOLAP Agency drives the visibility and leads that grow your business.</p>
-      <div class="clist"><div class="ci">Digital Advertising & Campaigns</div><div class="ci">Brand Identity & Strategy</div><div class="ci">Social Media Management</div><div class="ci">Content Production</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio" class="sec sbase bb">
-  <div class="shead">
-    <div>
-      <div class="eye rv"><div class="eye-r"></div><span>Our Work</span></div>
-      <h2 class="stitle rv">Featured<br>Projects.</h2>
-    </div>
-    <p class="sbody rv" style="max-width:380px;margin-top:0">Real systems. Real clients. Real results. Click any project to see the full story.</p>
-  </div>
-  <div class="pgrid">
-    <div class="pcard rv" onclick="openModal('prep')">
-      <div class="pcard-img">
-        <img src="screenshots/nolapprep.png" alt="NOLAP Prep" onerror="this.style.display='none';this.parentNode.querySelector('.pcard-img-placeholder').style.display='flex'">
-        <div class="pcard-img-placeholder" style="display:none">NOLAP PREP</div>
-        <div class="pcard-overlay"><div class="pcard-overlay-text">View Case Study →</div></div>
+  <div class="port-grid">
+    <div class="pcard rv" id="pcard-prep">
+      <div class="pcard-img-wrap">
+        <img src="screenshots/nolapprep.png" alt="NOLAP Prep" id="imgPrep">
+        <div class="pcard-ph" id="phPrep">NOLAP PREP</div>
+        <div class="pcard-ov"><span>View Case Study &#8594;</span></div>
       </div>
       <div class="pcard-body">
-        <div class="pcard-num">Project 01</div><div class="pcard-name">NOLAP Prep</div>
-        <div class="pcard-sub">AI-Powered Exam Platform · Live Product</div>
-        <p class="pcard-desc">An intelligent exam preparation platform with AI question generation, PDF/DOCX/PPTX upload, progress tracking, and premium plans — actively used by students across Ghana.</p>
-        <a href="https://nolapprep.com" target="_blank" class="pcard-link" onclick="event.stopPropagation()">nolapprep.com ↗</a>
+        <span class="pcard-badge">NOLAP Systems &middot; Software Product</span>
+        <div class="pcard-name">NOLAP Prep</div>
+        <div class="pcard-sub">AI-Powered Exam Platform</div>
+        <p class="pcard-desc">An intelligent exam prep platform with AI question generation, document uploads, progress tracking, and premium plans &mdash; actively used by students across Ghana.</p>
+        <a href="https://nolapprep.com" target="_blank" class="pcard-link">nolapprep.com &#8599;</a>
       </div>
     </div>
-    <div class="pcard rv" onclick="openModal('gaam')">
-      <div class="pcard-img">
-        <img src="screenshots/gaam.png" alt="GAAM Website" onerror="this.style.display='none';this.parentNode.querySelector('.pcard-img-placeholder').style.display='flex'">
-        <div class="pcard-img-placeholder" style="display:none">GAAM OFFICIAL</div>
-        <div class="pcard-overlay"><div class="pcard-overlay-text">View Case Study →</div></div>
+    <div class="pcard rv" id="pcard-gaam">
+      <div class="pcard-img-wrap">
+        <img src="screenshots/gaam.png" alt="GAAM Website" id="imgGaam">
+        <div class="pcard-ph" id="phGaam">GAAM OFFICIAL</div>
+        <div class="pcard-ov"><span>View Case Study &#8594;</span></div>
       </div>
       <div class="pcard-body">
-        <div class="pcard-num">Project 02</div><div class="pcard-name">GAAM Official</div>
-        <div class="pcard-sub">Institutional Website · National Body</div>
-        <p class="pcard-desc">The official digital platform for the Ghana Association of Assembly Members — serving elected officials and communities across all 16 regions of Ghana.</p>
-        <a href="https://gaamofficial.org" target="_blank" class="pcard-link" onclick="event.stopPropagation()">gaamofficial.org ↗</a>
+        <span class="pcard-badge">NOLAP Systems &middot; National Body</span>
+        <div class="pcard-name">GAAM Official</div>
+        <div class="pcard-sub">Institutional Website</div>
+        <p class="pcard-desc">The official digital platform for the Ghana Association of Assembly Members &mdash; serving elected officials across all 16 regions of Ghana.</p>
+        <a href="https://gaamofficial.org" target="_blank" class="pcard-link">gaamofficial.org &#8599;</a>
       </div>
     </div>
   </div>
-  <div style="text-align:center;margin-top:52px;" class="rv"><a href="portfolio.html" class="bfill">View All Projects</a></div>
+  <div style="text-align:center;margin-top:44px;" class="rv">
+    <a href="portfolio.html" class="btn-outline">View All Projects &#8594;</a>
+  </div>
 </section>
 
-<!-- ACADEMY STRIP — Python Bootcamp 2025 -->
-<section class="sec sdark bt bb" id="academy-strip">
-  <div class="ac-strip rv">
-    <div class="ac-strip-left">
-      <div class="eye"><div class="eye-r"></div><span>NOLAP Academy</span></div>
-      <h2 class="stitle">Python Bootcamp<br><span class="bl">2025.</span></h2>
-      <p class="sbody" style="margin-top:20px;max-width:460px;">We trained 21 university students in Python from zero. 13 of them went further — building and defending real software projects in the Code The Vacation Challenge. This is what NOLAP Academy produces.</p>
-      <div class="ac-stats">
-        <div class="ac-stat"><div class="ac-stat-val">21</div><div class="ac-stat-label">Students Trained</div></div>
-        <div class="ac-stat"><div class="ac-stat-val">13</div><div class="ac-stat-label">Projects Built & Defended</div></div>
-        <div class="ac-stat"><div class="ac-stat-val">5</div><div class="ac-stat-label">Award Categories</div></div>
+<!-- ═══ PYTHON BOOTCAMP 2025 ═══ -->
+<section id="python-bootcamp" class="sec">
+  <div class="py-grid">
+    <div class="rv">
+      <div class="py-tag"><div class="py-dot"></div>Completed &middot; 2025</div>
+      <h2 class="sec-title">Python Bootcamp<br><span class="bl">2025.</span></h2>
+      <p class="sec-body" style="margin-bottom:0;">We trained 21 university students in Python from zero. 13 of them went further &mdash; building and defending real software projects in the Code The Vacation Challenge.</p>
+      <div class="py-stats">
+        <div class="py-stat"><div class="py-stat-n">21</div><div class="py-stat-l">Students Trained</div></div>
+        <div class="py-stat"><div class="py-stat-n">13</div><div class="py-stat-l">Projects Built</div></div>
+        <div class="py-stat"><div class="py-stat-n">5</div><div class="py-stat-l">Award Categories</div></div>
       </div>
-      <div class="ac-btns">
-        <a href="https://github.com/Mortoti/code-the-vacation-challenge-2025" target="_blank" class="bfill">View Student Projects ↗</a>
-        <a href="portfolio.html#academy" class="bline">Full Case Study</a>
+      <div class="hof">
+        <div class="hof-head"><span>Hall of Fame &mdash; 2025</span></div>
+        <div class="hof-row"><div class="hof-award">Best Overall</div><div class="hof-name">Isaac Atoeyine Anafo</div><div class="hof-proj">GradeMaster &mdash; CWA/GPA Calculator</div></div>
+        <div class="hof-row"><div class="hof-award">Most Technical</div><div class="hof-name">Richmond Frimpong</div><div class="hof-proj">Mini Library Management System</div></div>
+        <div class="hof-row"><div class="hof-award">Most Creative</div><div class="hof-name">Nkrumah Joel</div><div class="hof-proj">AOM GAMES &mdash; 5-Game Arcade</div></div>
+        <div class="hof-row"><div class="hof-award">Best Presentation</div><div class="hof-name">Azumah Lordaria</div><div class="hof-proj">LORDISH Banking System</div></div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+        <a href="https://github.com/Mortoti/code-the-vacation-challenge-2025" target="_blank" class="btn-blue">View Student Projects &#8599;</a>
+        <a href="portfolio.html" class="btn-outline">Full Case Study</a>
       </div>
     </div>
-    <div class="ac-strip-right">
-      <div class="ac-winners">
-        <div class="ac-winner-label"><div class="eye-r"></div><span>Hall of Fame</span></div>
-        <div class="ac-winner-card"><div class="ac-award">🥇 Best Overall</div><div class="ac-winner-name">Isaac Atoeyine Anafo</div><div class="ac-winner-proj">GradeMaster — CWA/GPA Calculator</div></div>
-        <div class="ac-winner-card"><div class="ac-award">💻 Most Technical</div><div class="ac-winner-name">Richmond Frimpong</div><div class="ac-winner-proj">Mini Library Management System</div></div>
-        <div class="ac-winner-card"><div class="ac-award">🎨 Most Creative</div><div class="ac-winner-name">Nkrumah Joel</div><div class="ac-winner-proj">AOM GAMES — 5-Game Arcade</div></div>
-        <div class="ac-winner-card"><div class="ac-award">🎤 Best Presentation</div><div class="ac-winner-name">Azumah Lordaria</div><div class="ac-winner-proj">LORDISH Banking System</div></div>
+    <div class="py-flyer-col rv">
+      <div class="py-flyer-card" id="pyFlyerCard">
+        <img src="screenshots/bootcamp.jpg" alt="Python Bootcamp 2025" id="pyFlyerImg" style="width:100%;display:block;">
+      </div>
+      <p class="py-flyer-cap">Python Bootcamp 2025 &mdash; Code The Vacation Challenge</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery" class="sec">
+  <div class="gal-head rv">
+    <div>
+      <div class="tag"><div class="tag-dot"></div>Life at NOLAP</div>
+      <h2 class="sec-title">Behind the <span class="bl">Scenes.</span></h2>
+    </div>
+    <p class="sec-body" style="max-width:320px;">A glimpse into the people, sessions, and moments that make NOLAP what it is.</p>
+  </div>
+  <div class="gal-grid">
+    <div class="gal-item rv" id="gi0"><img src="gallery1.jpg" alt="NOLAP Gallery" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="gal-ov"></div></div>
+    <div class="gal-item rv" id="gi1"><img src="gallery2.jpg" alt="NOLAP Gallery" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="gal-ov"></div></div>
+    <div class="gal-item rv" id="gi2"><img src="gallery3.jpg" alt="NOLAP Gallery" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="gal-ov"></div></div>
+    <div class="gal-item rv" id="gi3"><img src="gallery4.jpg" alt="NOLAP Gallery" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="gal-ov"></div></div>
+    <div class="gal-item rv" id="gi4"><img src="gallery5.jpg" alt="NOLAP Gallery" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="gal-ov"></div></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-btn lb-close" id="lbClose">&#10005;</button>
+  <button class="lb-btn lb-prev" id="lbPrev">&#8249;</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext">&#8250;</button>
+</div>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process" class="sec">
+  <div class="proc-head rv">
+    <div class="tag" style="margin:0 auto 16px;"><div class="tag-dot"></div>How We Work</div>
+    <h2 class="sec-title">Simple. Direct. <span class="bl">Delivered.</span></h2>
+    <p class="sec-body" style="margin:0 auto;">No delays. No confusion. You come with a need &mdash; we scope it, build it, and deliver it.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step rv"><div class="step-n">01</div><div class="step-t">You Reach Out</div><p class="step-d">Tell us what you need. We listen, ask the right questions, and fully understand the brief before anything else.</p></div>
+    <div class="step rv"><div class="step-n">02</div><div class="step-t">We Scope &amp; Propose</div><p class="step-d">A clear proposal &mdash; what we'll build, how long, and what it costs. No hidden fees. No vague timelines.</p></div>
+    <div class="step rv"><div class="step-n">03</div><div class="step-t">We Build</div><p class="step-d">Our team executes and the PM keeps you updated at every stage &mdash; you're never in the dark.</p></div>
+    <div class="step rv"><div class="step-n">04</div><div class="step-t">You Launch</div><p class="step-d">We hand over a finished, polished product ready to go live. NOLAP stands behind everything we build.</p></div>
+  </div>
+  <div class="guarantee rv">
+    <div class="g-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+    <div><div class="g-title">Our Guarantee</div><p class="g-text">We do not deliver raw, unfinished work. Everything is reviewed internally before it reaches you. If we commit to a deadline, we hit it &mdash; no exceptions.</p></div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="cta" class="sec">
+  <div class="cta-grid">
+    <div class="rv">
+      <div class="tag"><div class="tag-dot"></div>Start a Project</div>
+      <h2 class="sec-title">Let's <span class="bl">Build</span><br>Together.</h2>
+      <p class="sec-body" style="margin-bottom:32px;">Fill in the brief below and we'll get back to you within 24 hours. Or jump straight to WhatsApp for a faster conversation.</p>
+      <div class="form-ok" id="formOk">
+        <div class="ok-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="ok-title">Brief Received!</div>
+        <p class="ok-msg">We'll respond within 24 hours. NOLAP builds fast &mdash; so will our reply.</p>
+      </div>
+      <div id="formWrap">
+        <div class="cform">
+          <div class="cf-row">
+            <div class="cf"><label>Full Name</label><input type="text" id="fname" placeholder="Your name"></div>
+            <div class="cf"><label>Email Address</label><input type="email" id="femail" placeholder="you@example.com"></div>
+          </div>
+          <div class="cf-row">
+            <div class="cf"><label>WhatsApp / Phone</label><input type="text" id="fphone" placeholder="+233 ..."></div>
+            <div class="cf">
+              <label>Service Needed</label>
+              <select id="fservice">
+                <option value="" disabled selected>Select a division</option>
+                <option>NOLAP Systems &mdash; Software / Web</option>
+                <option>NOLAP Academy &mdash; Training</option>
+                <option>NOLAP Agency &mdash; Marketing / Branding</option>
+                <option>Multiple / Not Sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="cf-row full">
+            <div class="cf"><label>Project Brief</label><textarea id="fmsg" placeholder="Tell us what you need built, scaled, or trained..." rows="5"></textarea></div>
+          </div>
+          <div class="cf-submit"><button type="button" id="submitBtn">Send Brief &#8594;</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-right rv">
+      <div class="wa-card">
+        <div class="wa-lbl">Prefer to talk directly?</div>
+        <div class="wa-title">Open a WhatsApp Conversation.</div>
+        <p class="wa-desc">Skip the form. Hit the button and we'll have a real conversation about what you need &mdash; fast.</p>
+        <a href="https://wa.me/233591671310?text=Hi%20NOLAP%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" class="wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="cinfo">
+        <div class="ci-row"><div class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="/cdn-cgi/l/email-protection#157b7a7974656170767d7b7a797a727c7066557278747c793b767a78"><span class="__cf_email__" data-cfemail="2846474449585c4d4b40464744474f414d5b684f45494144064b4745">[email&#160;protected]</span></a></div></div></div>
+        <div class="ci-row"><div class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ci-lbl">Location</div><div class="ci-val">Ghana, West Africa</div></div></div>
+        <div class="ci-row"><div class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="ci-lbl">Response Time</div><div class="ci-val">Within 24 hours</div></div></div>
+        <div class="ci-row"><div class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><div class="ci-lbl">Working Hours</div><div class="ci-val">Mon &ndash; Sat, 8am &ndash; 8pm GMT</div></div></div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <img src="logo.png" alt="NOLAP Technologies">
+      <div>
+        <div class="foot-name">NOLAP TECHNOLOGIES</div>
+        <div class="foot-motto">Architecting Systems from Zero.</div>
+      </div>
+    </div>
+    <div class="foot-socials">
+      <a href="https://www.linkedin.com/company/nolap-technologies/" target="_blank" class="fsoc" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://wa.me/233591671310" target="_blank" class="fsoc" aria-label="WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+      <a href="/cdn-cgi/l/email-protection#452b2a2924353120262d2b2a292a222c2036052228242c296b262a28" class="fsoc" aria-label="Email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>&#169; 2026 NOLAP Technologies. All rights reserved.</span>
+    <span>Ghana, West Africa</span>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 
 <!-- MODAL -->
-<div id="modal" class="modal-overlay" onclick="closeModal(event)">
+<div class="modal-bg" id="modal">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <button class="modal-x" id="modalX">&#10005;</button>
     <div id="modal-content"></div>
   </div>
 </div>
 
-<!-- PROCESS -->
-<section id="process" class="sec sdark bb">
-  <div class="eye rv"><div class="eye-r"></div><span>How We Work</span></div>
-  <h2 class="stitle rv">Simple. Direct.<br><span class="bl">Delivered.</span></h2>
-  <div class="gl">
-    <div class="pleft">
-      <p class="sbody rv" style="margin-top:0">No delays. No confusion. You come with a need — we scope it, build it, and deliver it. That is the NOLAP standard.</p>
-      <div class="guarantee rv">
-        <div class="gtag">Our Guarantee</div>
-        <p class="gbody">We do not deliver raw, unfinished work. Everything is reviewed internally before it reaches you. If we commit to a deadline, we hit it.</p>
-      </div>
-    </div>
-    <div class="steps">
-      <div class="step rv"><div class="sn">01</div><div><div class="st">You Reach Out</div><p class="sd">Tell us what you need — a website, a marketing campaign, a software system, or training for your team. We listen, ask the right questions, and fully understand the brief before anything else.</p></div></div>
-      <div class="step rv"><div class="sn">02</div><div><div class="st">We Scope & Propose</div><p class="sd">We put together a clear proposal — what we will build, how long it will take, and what it will cost. No hidden fees. No vague timelines. You know exactly what you are getting before you commit.</p></div></div>
-      <div class="step rv"><div class="sn">03</div><div><div class="st">We Build</div><p class="sd">Our team executes. The PM keeps you updated at every stage — you are never in the dark. All work is reviewed and polished internally before it reaches your hands.</p></div></div>
-      <div class="step rv"><div class="sn">04</div><div><div class="st">You Launch</div><p class="sd">We hand over a finished, polished product ready to go live. Your brand looks sharp, your system works, your campaign runs. NOLAP stands behind everything we build.</p></div></div>
-    </div>
-  </div>
-</section>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function() {
 
-<!-- CONTACT -->
-<section id="cta">
-  <div class="contact-grid">
-    <div class="contact-left rv">
-      <div class="clabel"><div class="clr"></div><span>Start a Project</span></div>
-      <h2 class="ch">Let's<br><span class="bl">Build</span><br>Together.</h2>
-      <p class="cp">Fill in the brief below and we'll get back to you within 24 hours. Or jump straight to WhatsApp if you prefer a faster conversation.</p>
-      <div class="form-success" id="formSuccess">
-        <div class="success-icon">✦</div>
-        <div class="success-title">Brief Received.</div>
-        <p class="success-msg">We have your message and will respond within 24 hours.<br>NOLAP builds fast — so will our reply.</p>
-      </div>
-      <div id="formWrap">
-        <div class="cform">
-          <div class="cform-row">
-            <div class="cfield"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
-            <div class="cfield"><label>Email Address</label><input type="email" name="email" placeholder="you@example.com" required></div>
-          </div>
-          <div class="cform-row">
-            <div class="cfield"><label>WhatsApp / Phone</label><input type="text" name="phone" placeholder="+233 ..."></div>
-            <div class="cfield">
-              <label>Service Needed</label>
-              <select name="service">
-                <option value="" disabled selected>Select a division</option>
-                <option value="NOLAP Systems — Software / Web">NOLAP Systems — Software / Web</option>
-                <option value="NOLAP Academy — Training">NOLAP Academy — Training</option>
-                <option value="NOLAP Agency — Marketing / Branding">NOLAP Agency — Marketing / Branding</option>
-                <option value="Multiple / Not Sure">Multiple / Not Sure</option>
-              </select>
-            </div>
-          </div>
-          <div class="cform-row full">
-            <div class="cfield"><label>Project Brief</label><textarea name="message" placeholder="Tell us what you need built, scaled, or trained..." required></textarea></div>
-          </div>
-          <div class="cform-submit">
-            <button type="button" id="submitBtn" onclick="submitForm()"><span id="btnText">Send Brief →</span></button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-right rv">
-      <div class="cright-top">
-        <div class="cright-label">Prefer to talk directly?</div>
-        <div class="cright-title">Open a<br>WhatsApp<br>Conversation.</div>
-        <p class="cright-desc">Skip the form. Hit the button and we'll have a real conversation about what you need — fast.</p>
-        <a href="https://wa.me/233591671310?text=Hi%20NOLAP%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" class="wa-btn"><span class="wa-icon">💬</span> Chat on WhatsApp</a>
-      </div>
-      <div class="cright-info">
-        <div class="cinfo-item"><div class="cinfo-icon">✉</div><div><div class="cinfo-label">Email Us</div><div class="cinfo-val"><a href="mailto:nolaptechnologies@gmail.com">nolaptechnologies@gmail.com</a></div></div></div>
-        <div class="cinfo-item"><div class="cinfo-icon">📍</div><div><div class="cinfo-label">Location</div><div class="cinfo-val">Ghana, West Africa</div></div></div>
-        <div class="cinfo-item"><div class="cinfo-icon">⏱</div><div><div class="cinfo-label">Response Time</div><div class="cinfo-val">Within 24 hours</div></div></div>
-        <div class="cinfo-item"><div class="cinfo-icon">✦</div><div><div class="cinfo-label">Working Hours</div><div class="cinfo-val">Mon – Sat, 8am – 8pm GMT</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+/* IMAGE FALLBACKS */
+function imgFallback(imgId, fallbackHtml) {
+  var img = document.getElementById(imgId);
+  if (!img) return;
+  function doFallback() {
+    var wrap = img.parentNode;
+    wrap.innerHTML = fallbackHtml;
+  }
+  img.addEventListener('error', doFallback);
+  if (img.complete && img.naturalWidth === 0) doFallback();
+}
 
-<!-- FOOTER -->
-<footer>
-  <div class="fgrid">
-    <div class="fbrand">
-      <img src="logo.png" alt="NOLAP Technologies">
-      <div class="fbname">NOLAP TECHNOLOGIES</div>
-      <div class="fbmotto">Architecting Systems from Zero.</div>
-      <p class="fbdesc">A high-performance African technology company building software, scaling brands, and training the next generation of tech talent.</p>
-    </div>
-    <div><div class="fch">Divisions</div><ul class="flinks"><li><a href="#services">NOLAP Systems</a></li><li><a href="#services">NOLAP Academy</a></li><li><a href="#services">NOLAP Agency</a></li></ul></div>
-    <div><div class="fch">Company</div><ul class="flinks"><li><a href="#about">About</a></li><li><a href="#process">How We Work</a></li><li><a href="#cta">Work With Us</a></li></ul></div>
-    <div><div class="fch">Contact</div><ul class="flinks"><li><a href="mailto:nolaptechnologies@gmail.com">nolaptechnologies@gmail.com</a></li><li><a href="https://wa.me/233591671310?text=Hi%20NOLAP%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">WhatsApp</a></li><li><a href="https://www.linkedin.com/company/nolap-technologies/" target="_blank">LinkedIn</a></li></ul></div>
-  </div>
-  <div class="fbot">
-    <span>© 2026 NOLAP Technologies. All rights reserved.</span>
-    <span>Architecting Systems from Zero.</span>
-  </div>
-</footer>
+function cardFallback(imgId, phId) {
+  var img = document.getElementById(imgId);
+  var ph = document.getElementById(phId);
+  if (!img || !ph) return;
+  function doFallback() {
+    img.style.display = 'none';
+    ph.style.display = 'flex';
+  }
+  img.addEventListener('error', doFallback);
+  if (img.complete && img.naturalWidth === 0) doFallback();
+}
 
-<script>
-// Scroll spy
-const spySections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nmenu a[href^="#"]');
-const spyObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      const active = document.querySelector(`.nmenu a[href="#${entry.target.id}"]`);
-      if (active) active.classList.add('active');
+imgFallback('heroImg', '<div class="hero-img" style="background:linear-gradient(160deg,#C4DAFF,#EBF3FF);"></div>');
+imgFallback('aboutImg1', '<div style="width:100%;height:100%;background:linear-gradient(135deg,#EBF3FF,#C4DAFF);border-radius:32px;"></div>');
+imgFallback('aboutImg2', '<div style="width:100%;height:100%;background:linear-gradient(135deg,#C4DAFF,#EBF3FF);border-radius:20px;"></div>');
+imgFallback('aboutImg3', '<div style="width:100%;height:100%;background:linear-gradient(135deg,var(--blue),#003F8A);border-radius:20px;display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:13px;color:rgba(255,255,255,0.8);text-align:center;letter-spacing:1px;padding:16px;">Architecting<br>Systems<br>from Zero.</div>');
+cardFallback('imgPrep', 'phPrep');
+cardFallback('imgGaam', 'phGaam');
+
+/* Flyer fallbacks */
+var flyerImg = document.getElementById('flyerImg');
+var flyerCard = document.getElementById('flyerCard');
+if (flyerImg && flyerCard) {
+  function flyerFb() {
+    flyerCard.innerHTML = '<div class="flyer-ph"><div class="flyer-ph-t">C++<br>MASTERY</div><div class="flyer-ph-s">Bootcamp · NOLAP Academy</div></div>';
+  }
+  flyerImg.addEventListener('error', flyerFb);
+  if (flyerImg.complete && flyerImg.naturalWidth === 0) flyerFb();
+}
+var pyImg = document.getElementById('pyFlyerImg');
+var pyCard = document.getElementById('pyFlyerCard');
+if (pyImg && pyCard) {
+  function pyFb() {
+    pyCard.innerHTML = '<div class="py-flyer-ph"><div class="flyer-ph-t" style="color:#fff;">PYTHON<br>BOOTCAMP</div><div class="flyer-ph-s">2025 · NOLAP Academy</div></div>';
+  }
+  pyImg.addEventListener('error', pyFb);
+  if (pyImg.complete && pyImg.naturalWidth === 0) pyFb();
+}
+
+/* Gallery fallbacks */
+var galSrcs = ['gallery1.jpg','gallery2.jpg','gallery3.jpg','gallery4.jpg','gallery5.jpg'];
+for (var g = 0; g < 5; g++) {
+  (function(i) {
+    var item = document.getElementById('gi' + i);
+    if (!item) return;
+    var img = item.querySelector('img');
+    if (!img) return;
+    function galFb() {
+      item.innerHTML = '<div class="gal-ph">ADD PHOTO ' + (i+1) + '</div><div class="gal-ov"></div>';
+      item.onclick = function() { openLightbox(i); };
+    }
+    img.addEventListener('error', galFb);
+    if (img.complete && img.naturalWidth === 0) galFb();
+    item.onclick = function() { openLightbox(i); };
+  })(g);
+}
+
+/* BACK TO TOP */
+window.addEventListener('scroll', function() {
+  var btn = document.getElementById('btt');
+  if (window.scrollY > 400) { btn.classList.add('show'); } else { btn.classList.remove('show'); }
+});
+document.getElementById('btt').addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* NAV HAMBURGER */
+document.getElementById('hbg').addEventListener('click', function() {
+  this.classList.toggle('open');
+  document.getElementById('drawer').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('drawer').classList.contains('open') ? 'hidden' : '';
+});
+document.querySelectorAll('.drawer a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('hbg').classList.remove('open');
+    document.getElementById('drawer').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+/* SCROLL REVEAL */
+var revObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e, i) {
+    if (e.isIntersecting) {
+      setTimeout(function() { e.target.classList.add('in'); }, (i % 4) * 100);
+      revObs.unobserve(e.target);
     }
   });
-}, {threshold:0.3, rootMargin:'-80px 0px -60% 0px'});
-spySections.forEach(s => spyObserver.observe(s));
+}, { threshold: 0.08 });
+document.querySelectorAll('.rv').forEach(function(el) { revObs.observe(el); });
 
-// Hamburger
-function toggleMenu() {
-  const h = document.getElementById('hamburger');
-  const d = document.getElementById('mobileDrawer');
-  const header = document.getElementById('site-header');
-  d.style.top = header.getBoundingClientRect().bottom + 'px';
-  h.classList.toggle('open');
-  d.classList.toggle('open');
-  document.body.style.overflow = d.classList.contains('open') ? 'hidden' : '';
+/* NAV SPY */
+var spySecs = document.querySelectorAll('section[id]');
+var navLinks = document.querySelectorAll('.nmenu a');
+var spyObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      navLinks.forEach(function(l) { l.classList.remove('active'); });
+      var a = document.querySelector('.nmenu a[href="#' + e.target.id + '"]');
+      if (a) a.classList.add('active');
+    }
+  });
+}, { threshold: 0.25, rootMargin: '-70px 0px -55% 0px' });
+spySecs.forEach(function(s) { spyObs.observe(s); });
+
+/* GALLERY LIGHTBOX */
+var curLb = 0;
+function openLightbox(i) {
+  curLb = i;
+  var item = document.getElementById('gi' + i);
+  var img = item ? item.querySelector('img') : null;
+  document.getElementById('lbImg').src = img ? img.src : '';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
-function closeMenu() {
-  document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('mobileDrawer').classList.remove('open');
+function closeLb() {
+  document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
+function shiftLb(d) {
+  curLb = (curLb + d + 5) % 5;
+  var item = document.getElementById('gi' + curLb);
+  var img = item ? item.querySelector('img') : null;
+  document.getElementById('lbImg').src = img ? img.src : '';
+}
+document.getElementById('lbClose').addEventListener('click', closeLb);
+document.getElementById('lbPrev').addEventListener('click', function() { shiftLb(-1); });
+document.getElementById('lbNext').addEventListener('click', function() { shiftLb(1); });
+document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLb(); });
 
-// Scroll reveal
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('in'), (i % 5) * 100);
-      io.unobserve(e.target);
-    }
-  });
-}, {threshold: 0.1});
-document.querySelectorAll('.rv').forEach(el => io.observe(el));
+/* PORTFOLIO CARD CLICKS */
+document.getElementById('pcard-prep').addEventListener('click', function() { openModal('prep'); });
+document.getElementById('pcard-gaam').addEventListener('click', function() { openModal('gaam'); });
+document.querySelectorAll('.pcard-link').forEach(function(l) {
+  l.addEventListener('click', function(e) { e.stopPropagation(); });
+});
 
-// Modal
-const projects = {
+/* PROJECT MODAL */
+var projects = {
   prep: {
-    title:'NOLAP Prep', division:'NOLAP Systems', sub:'AI-Powered Exam Platform · Live Software Product',
-    img:'screenshots/nolapprep.png', imgLabel:'NOLAP PREP',
-    problem:'Students across Ghana were spending money on expensive, outdated exam prep materials with no intelligent feedback or personalised study tools.',
-    solution:'NOLAP Systems engineered a full AI-powered platform that generates exam questions from uploaded documents, tracks student progress, and offers affordable premium plans. Students are actively using it today.',
-    tags:['AI Integration','Exam Generation','PDF / DOCX / PPTX Upload','User Authentication','Progress Tracking','Premium Subscription'],
-    link:'https://nolapprep.com'
+    title: 'NOLAP Prep', div: 'NOLAP Systems', sub: 'AI-Powered Exam Platform',
+    img: 'screenshots/nolapprep.png', iph: 'NOLAP PREP',
+    prob: 'Students across Ghana were spending money on expensive, outdated exam prep materials with no intelligent feedback or personalised study tools.',
+    sol: 'NOLAP Systems engineered a full AI-powered platform that generates exam questions from uploaded PDFs, DOCX, and PPTX files. Students track progress and access premium plans.',
+    tags: ['AI Question Generation','PDF/DOCX/PPTX Upload','Google Auth','Progress Tracking','Premium Plans'],
+    link: 'https://nolapprep.com', ll: 'Visit nolapprep.com'
   },
   gaam: {
-    title:'GAAM Official', division:'NOLAP Systems', sub:'Institutional Website · Ghana Association of Assembly Members',
-    img:'screenshots/gaam.png', imgLabel:'GAAM OFFICIAL',
-    problem:'The Ghana Association of Assembly Members — a national body representing elected officials across all 16 regions — had no official digital presence, limiting visibility and communication.',
-    solution:'NOLAP Systems designed and built a full institutional website with news & events, executive profiles, FAQs, and contact systems. The site now serves as the credible public face of a national governance body.',
-    tags:['Institutional Website','Multi-page Architecture','News & Events System','Executive Profiles','National Governance','16 Regions'],
-    link:'https://gaamofficial.org'
+    title: 'GAAM Official', div: 'NOLAP Systems', sub: 'Institutional Website',
+    img: 'screenshots/gaam.png', iph: 'GAAM OFFICIAL',
+    prob: 'The Ghana Association of Assembly Members had no official digital presence, limiting visibility and communication across all 16 regions of Ghana.',
+    sol: 'NOLAP Systems built a full institutional website with news & events, executive profiles, FAQs, and contact systems — the credible public face of a national governance body.',
+    tags: ['Institutional Website','Multi-page Architecture','News & Events','Executive Profiles','16 Regions'],
+    link: 'https://gaamofficial.org', ll: 'Visit gaamofficial.org'
   }
 };
 function openModal(id) {
-  const p = projects[id];
-  document.getElementById('modal-content').innerHTML = `
-    <div id="modal-img-wrap"><img src="${p.img}" alt="${p.title}" style="width:100%;height:280px;object-fit:cover;display:block;" onerror="document.getElementById('modal-img-wrap').innerHTML='<div class=\\'modal-img-placeholder\\'>${p.imgLabel}</div>'"></div>
-    <div class="modal-inner">
-      <div class="modal-div">${p.division}</div>
-      <div class="modal-title">${p.title}</div>
-      <div class="modal-sub">${p.sub}</div>
-      <div class="modal-rule"></div>
-      <div class="modal-ps">
-        <div class="modal-ps-box"><div class="modal-ps-label prob">// The Problem</div><p class="modal-ps-text">${p.problem}</p></div>
-        <div class="modal-ps-box"><div class="modal-ps-label sol">// The Solution</div><p class="modal-ps-text">${p.solution}</p></div>
-      </div>
-      <div class="modal-tags">${p.tags.map(t => `<span class="modal-tag">${t}</span>`).join('')}</div>
-      <a href="${p.link}" target="_blank" class="modal-livelink">View Live Project ↗</a>
-    </div>`;
+  var p = projects[id];
+  var tags = p.tags.map(function(t) { return '<span class="modal-tag">' + t + '</span>'; }).join('');
+  document.getElementById('modal-content').innerHTML =
+    '<div class="modal-img-wrap"><img src="' + p.img + '" alt="' + p.title + '" id="mimg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>' +
+    '<div class="modal-body">' +
+      '<span class="modal-badge">' + p.div + '</span>' +
+      '<div class="modal-title">' + p.title + '</div>' +
+      '<div class="modal-sub">' + p.sub + '</div>' +
+      '<div class="modal-ps">' +
+        '<div class="modal-ps-box"><div class="modal-ps-lbl prob">The Problem</div><p class="modal-ps-txt">' + p.prob + '</p></div>' +
+        '<div class="modal-ps-box"><div class="modal-ps-lbl sol">The Solution</div><p class="modal-ps-txt">' + p.sol + '</p></div>' +
+      '</div>' +
+      '<div class="modal-tags">' + tags + '</div>' +
+      '<a href="' + p.link + '" target="_blank" class="modal-link">' + p.ll + ' &#8599;</a>' +
+    '</div>';
+  var mimg = document.getElementById('mimg');
+  if (mimg) {
+    mimg.addEventListener('error', function() {
+      var wrap = document.querySelector('.modal-img-wrap');
+      if (wrap) wrap.innerHTML = '<div class="modal-img-ph">' + p.iph + '</div>';
+    });
+  }
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeModal(e) { if (e.target === document.getElementById('modal')) closeModalBtn(); }
-function closeModalBtn() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = ''; }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalBtn(); });
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modalX').addEventListener('click', closeModal);
+document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
 
-// Contact form
-async function submitForm() {
-  const btn = document.getElementById('submitBtn');
-  const btnText = document.getElementById('btnText');
-  const name = document.querySelector('[name="name"]').value.trim();
-  const email = document.querySelector('[name="email"]').value.trim();
-  const service = document.querySelector('[name="service"]').value;
-  const message = document.querySelector('[name="message"]').value.trim();
-  if (!name || !email || !message) {
-    [document.querySelector('[name="name"]'), document.querySelector('[name="email"]'), document.querySelector('[name="message"]')].forEach(f => {
-      if (!f.value.trim()) { f.style.color = 'rgba(255,100,100,0.9)'; setTimeout(() => f.style.color = '', 2000); }
-    });
+/* KEYBOARD */
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { closeModal(); closeLb(); }
+  if (document.getElementById('lightbox').classList.contains('open')) {
+    if (e.key === 'ArrowLeft') shiftLb(-1);
+    if (e.key === 'ArrowRight') shiftLb(1);
+  }
+});
+
+/* CONTACT FORM */
+document.getElementById('submitBtn').addEventListener('click', async function() {
+  var btn = this;
+  var name = document.getElementById('fname').value.trim();
+  var email = document.getElementById('femail').value.trim();
+  var service = document.getElementById('fservice').value;
+  var msg = document.getElementById('fmsg').value.trim();
+  if (!name || !email || !msg) {
+    if (!name) { document.getElementById('fname').style.outline = '2px solid #DC2626'; setTimeout(function() { document.getElementById('fname').style.outline = ''; }, 2000); }
+    if (!email) { document.getElementById('femail').style.outline = '2px solid #DC2626'; setTimeout(function() { document.getElementById('femail').style.outline = ''; }, 2000); }
+    if (!msg) { document.getElementById('fmsg').style.outline = '2px solid #DC2626'; setTimeout(function() { document.getElementById('fmsg').style.outline = ''; }, 2000); }
     return;
   }
-  btnText.textContent = 'Sending...';
+  btn.textContent = 'Sending...';
   btn.style.opacity = '0.7';
   btn.style.pointerEvents = 'none';
   try {
-    const res = await fetch('https://formspree.io/f/xqedvlgv', {
+    var res = await fetch('https://formspree.io/f/xqedvlgv', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify({name, email, service, message})
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, service: service, message: msg })
     });
     if (res.ok) {
       document.getElementById('formWrap').style.display = 'none';
-      document.getElementById('formSuccess').classList.add('show');
+      document.getElementById('formOk').classList.add('show');
     } else {
-      btnText.textContent = 'Failed — Try Again';
-      btn.style.opacity = '1'; btn.style.pointerEvents = 'all';
-      btn.style.background = 'rgba(180,40,40,0.9)';
+      btn.textContent = 'Failed — Try Again';
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'all';
     }
   } catch(err) {
-    btnText.textContent = 'Error — Try Again';
-    btn.style.opacity = '1'; btn.style.pointerEvents = 'all';
+    btn.textContent = 'Error — Try Again';
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'all';
   }
-}
+});
+
+})();
 </script>
 </body>
 </html>
