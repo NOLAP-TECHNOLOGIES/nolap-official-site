@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}NOLAP Forms{% endblock %}</title>
+
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['"Inter Tight"', 'system-ui', 'sans-serif'],
+                        body: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#EEF1FF',
+                            100: '#D9DEFF',
+                            200: '#B3BDFF',
+                            300: '#8D9CFF',
+                            400: '#5A6EFF',
+                            500: '#2140FF',
+                            600: '#1A33CC',
+                            700: '#142699',
+                            800: '#0D1A66',
+                            900: '#0B1240',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.14.3/dist/cdn.min.js"></script>
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="font-body text-brand-900 bg-[#FBFBFE] antialiased">
+    {% block body %}{% endblock %}
+</body>
+</html>
